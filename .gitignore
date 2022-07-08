@@ -1,0 +1,9 @@
+benchspec/
+*.html
+*.csv
+hpc2021*.pdf
+*.ps
+*.log
+*.hpc2021
+
+xthi
