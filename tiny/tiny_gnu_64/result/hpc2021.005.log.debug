@@ -1,0 +1,311 @@
+==============================================================================
+Debug log for hpc2021.  This file contains very detailed debugging
+output from the hpc2021 tools (as if "--verbose 99" had been specified) and is
+typically useful only to developers of the hpc2021 toolset.
+
+For a successful run, this debug log will be removed automatically, unless you
+specify "--keeptmp" on the command line, or "keeptmp=1" in your config file.
+
+If you file a support request with hpc2021support@spec.org, you may be
+asked to submit this file.
+------------------------------------------------------------------------------
+
+Environment variables that may have been set or changed by shrc:
+SPEC: /lustre/SPEChpc
+PATH: /lustre/SPEChpc/bin:/home/sam/spack/bin:/usr/lib64/qt-3.3/bin:/opt/amazon/openmpi/bin/:/opt/amazon/efa/bin/:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/bin:/opt/aws/bin:/opt/parallelcluster/pyenv/versions/3.7.10/envs/awsbatch_virtualenv/bin:/opt/slurm/bin:/home/sam/.local/bin:/home/sam/bin
+SPECPERLLIB: /lustre/SPEChpc/bin/lib:/lustre/SPEChpc/bin
+LD_LIBRARY_PATH: 
+DYLD_LIBRARY_PATH: 
+LC_ALL: C
+LC_LANG: C
+SPECDB_PWD: /home/sam/g3_spec_results/tiny/tiny_gnu_64
+------------------------------------------------------------------------------
+
+Runspec's verbose version output:
+                 This is the SPEC hpc2021 benchmark tools suite.
+
+Version summary:
+    hpc2021 version: 1.0.3
+ Benchmarks version: 1.0.3
+      Tools version: 0.9.1
+    runhpc version: v.unknown ($Id$)
+
+Tools information:
+ Tools package installed: linux-aarch64
+ File locking method: fcntl(2) (probably network-safe)
+Mode |  UID  |  GID  |   Size  |   Modification Time  | Name
+0755 | 1443601145 | 1443600513 | 2022365 |  2016-12-07 05:16:40 | specperl
+0755 | 1443601145 | 1443600513 |  194912 |  2016-12-07 05:16:40 | specmake
+0755 | 1443601145 | 1443600513 |   31128 |  2016-12-07 05:16:40 | specinvoke
+0755 | 1443601145 | 1443600513 |  315576 |  2016-12-07 05:16:40 | specrxp
+0755 | 1443601145 | 1443600513 |    1530 |  2021-10-19 17:10:24 | runhpc
+0755 | 1443601145 | 1443600513 |  177891 |  2021-10-19 17:10:23 | harness/runhpc
+0755 | 1443601145 | 1443600513 |   89923 |  2021-10-19 17:10:46 | specpp
+0755 | 1443601145 | 1443600513 |   89923 |  2021-10-19 17:10:23 | harness/specpp
+0755 | 1443601145 | 1443600513 |    9761 |  2021-10-19 17:10:23 | harness/specdiff
+0755 | 1443601145 | 1443600513 |  203704 |  2016-12-07 05:16:40 | specxz
+0755 | 1443601145 | 1443600513 |   68224 |  2016-12-07 05:16:40 | specsha512sum
+
+Version info for specperl (specperl): This is specperl 5, version 24, subversion 0 (v5.24.0) built for aarch64-linux
+                                      Compiled at Dec  7 2016 04:49:32
+                                      For more detail on specperl, say 'specperl -V'
+Version info for specmake (specmake): GNU Make 4.2.1
+Version info for specinvoke (specinvoke): specinvoke r4356 (OS implementation r4356)
+Version info for specrxp ($SPEC/bin/specrxp): RXP 1.5.0 Copyright Richard Tobin, LTG, HCRC, University of Edinburgh
+                                              Modified for use in SPEC benchmarks - 14 April 2011
+Version info for specpp ($SPEC/bin/specpp): specpp is not in the search path!
+Version info for specxz ($SPEC/bin/specxz): xz (XZ Utils) 5.2.2
+Version info for specsha512sum ($SPEC/bin/specsha512sum): sha512sum (specsum) 1.3
+
+==============================================================================
+
+1658845322.01: runhpc v.unknown started at 2022-07-26 14:22:01 on "graviton3-dy-c7g16xlarge-1"
+1658845322.01: runhpc is: /lustre/SPEChpc/bin/harness/runhpc
+1658845322.01: runhpc: runhpc --rebuild --config=aws_g3.cfg --ranks=64 --reportable --output_format=all --output_root=/home/sam/g3_spec_results/tiny/tiny_gnu_64 --iterations=2 528.pot3d_t
+1658845322.01: toolset: linux-aarch64
+
+1658845322.01(0.02s): Locating benchmarks...Created default regexp '(?:^|(?<=\s))[-/]DSPEC(?:\([^\)]+\))?(?:=\S*)?(?=\s|$)' for DSPEC in /lustre/SPEChpc/benchspec/flags-mandatory.xml
+1658845322.03: Created default regexp '(?:^|(?<=\s))[-/]USPEC(?:\([^\)]+\))?(?:=\S*)?(?=\s|$)' for USPEC in /lustre/SPEChpc/benchspec/flags-mandatory.xml
+1658845322.03: Created default regexp '(?:^|(?<=\s))[-/]DNDEBUG(?:\([^\)]+\))?(?:=\S*)?(?=\s|$)' for DNDEBUG in /lustre/SPEChpc/benchspec/flags-mandatory.xml
+1658845322.03: Created default regexp '(?:^|(?<=\s))[-/]UNDEBUG(?:\([^\)]+\))?(?:=\S*)?(?=\s|$)' for UNDEBUG in /lustre/SPEChpc/benchspec/flags-mandatory.xml
+1658845322.03: Created default regexp '(?:^|(?<=\s))[-/]DSPEC_OPENMP(?:\([^\)]+\))?(?:=\S*)?(?=\s|$)' for DSPEC_OPENMP in /lustre/SPEChpc/benchspec/flags-mandatory.xml
+1658845322.03: Created default regexp '(?:^|(?<=\s))[-/]DSPEC_OPENMP_TARGET(?:\([^\)]+\))?(?:=\S*)?(?=\s|$)' for DSPEC_OPENMP_TARGET in /lustre/SPEChpc/benchspec/flags-mandatory.xml
+1658845322.03: Created default regexp '(?:^|(?<=\s))[-/]DSPEC_OPENACC(?:\([^\)]+\))?(?:=\S*)?(?=\s|$)' for DSPEC_OPENACC in /lustre/SPEChpc/benchspec/flags-mandatory.xml
+1658845322.03: Created default regexp '(?:^|(?<=\s))[-/]DSPEC_ACCEL_AWARE_MPI(?:\([^\)]+\))?(?:=\S*)?(?=\s|$)' for DSPEC_ACCEL_AWARE_MPI in /lustre/SPEChpc/benchspec/flags-mandatory.xml
+1658845322.03: Created default regexp '(?:^|(?<=\s))[-/]DSPEC_USE_MPIFH(?:\([^\)]+\))?(?:=\S*)?(?=\s|$)' for DSPEC_USE_MPIFH in /lustre/SPEChpc/benchspec/flags-mandatory.xml
+1658845322.03: Created default regexp '(?:^|(?<=\s))[-/]DSPEC_SPLIT_TARGET_REDUCTION(?:\([^\)]+\))?(?:=\S*)?(?=\s|$)' for DSPEC_SPLIT_TARGET_REDUCTION in /lustre/SPEChpc/benchspec/flags-mandatory.xml
+1658845322.03: Created default regexp '(?:^|(?<=\s))[-/]DSPEC_OPENMP_LOOP(?:\([^\)]+\))?(?:=\S*)?(?=\s|$)' for DSPEC_OPENMP_LOOP in /lustre/SPEChpc/benchspec/flags-mandatory.xml
+1658845322.03: Created default regexp '(?:^|(?<=\s))[-/]DSPEC_CUDA(?:\([^\)]+\))?(?:=\S*)?(?=\s|$)' for DSPEC_CUDA in /lustre/SPEChpc/benchspec/flags-mandatory.xml
+1658845322.03: Created default regexp '(?:^|(?<=\s))[-/]DSPEC_HIP(?:\([^\)]+\))?(?:=\S*)?(?=\s|$)' for DSPEC_HIP in /lustre/SPEChpc/benchspec/flags-mandatory.xml
+1658845322.03: Reading suite directory for 'HPC', '/lustre/SPEChpc/benchspec'
+1658845322.03:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '835.weather_l'
+1658845322.03:     Evaluated /lustre/SPEChpc/benchspec/HPC/835.weather_l/Spec/object.pm in 0.001428127s
+1658845322.03:     Instantiated Spec::Benchmark::weather_l835 in 0.000244141s
+1658845322.03:     Finding src.alts took 0.000030994s
+1658845322.03:   Setting up weather_l took 0.001915932s
+
+1658845322.03:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '521.miniswp_t'
+1658845322.03:     Evaluated /lustre/SPEChpc/benchspec/HPC/521.miniswp_t/Spec/object.pm in 0.001506090s
+1658845322.03:     Instantiated Spec::Benchmark::miniswp_t521 in 0.000155926s
+1658845322.03:     Finding src.alts took 0.000029087s
+1658845322.03:   Setting up miniswp_t took 0.001873016s
+
+1658845322.03:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '618.tealeaf_s'
+1658845322.03:     Evaluated /lustre/SPEChpc/benchspec/HPC/618.tealeaf_s/Spec/object.pm in 0.001370907s
+1658845322.03:     Instantiated Spec::Benchmark::tealeaf_s618 in 0.000149965s
+1658845322.03:     Finding src.alts took 0.000029087s
+1658845322.03:   Setting up tealeaf_s took 0.001733065s
+
+1658845322.03:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '805.lbm_l'
+1658845322.03:     Evaluated /lustre/SPEChpc/benchspec/HPC/805.lbm_l/Spec/object.pm in 0.001304150s
+1658845322.04:     Instantiated Spec::Benchmark::lbm_l805 in 0.000147104s
+1658845322.04:     Finding src.alts took 0.000026941s
+1658845322.04:   Setting up lbm_l took 0.001659155s
+
+1658845322.04:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', 'medium.bset'
+1658845322.04:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '705.lbm_m'
+1658845322.04:     Evaluated /lustre/SPEChpc/benchspec/HPC/705.lbm_m/Spec/object.pm in 0.001633883s
+1658845322.04:     Instantiated Spec::Benchmark::lbm_m705 in 0.000144005s
+1658845322.04:     Finding src.alts took 0.000028849s
+1658845322.04:   Setting up lbm_m took 0.002013922s
+
+1658845322.04:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '513.soma_t'
+1658845322.04:     Evaluated /lustre/SPEChpc/benchspec/HPC/513.soma_t/Spec/object.pm in 0.001405954s
+1658845322.04:     Instantiated Spec::Benchmark::soma_t513 in 0.000144958s
+1658845322.04:     Finding src.alts took 0.000029087s
+1658845322.04:   Setting up soma_t took 0.001762152s
+
+1658845322.04:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', 'large.bset'
+1658845322.04:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '818.tealeaf_l'
+1658845322.05:     Evaluated /lustre/SPEChpc/benchspec/HPC/818.tealeaf_l/Spec/object.pm in 0.001626015s
+1658845322.05:     Instantiated Spec::Benchmark::tealeaf_l818 in 0.000139952s
+1658845322.05:     Finding src.alts took 0.000027895s
+1658845322.05:   Setting up tealeaf_l took 0.002002954s
+
+1658845322.05:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '632.sph_exa_s'
+1658845322.05:     Evaluated /lustre/SPEChpc/benchspec/HPC/632.sph_exa_s/Spec/object.pm in 0.001346827s
+1658845322.05:     Instantiated Spec::Benchmark::sph_exa_s632 in 0.000151873s
+1658845322.05:     Finding src.alts took 0.000028849s
+1658845322.05:   Setting up sph_exa_s took 0.001727104s
+
+1658845322.05:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '728.pot3d_m'
+1658845322.05:     Evaluated /lustre/SPEChpc/benchspec/HPC/728.pot3d_m/Spec/object.pm in 0.001368046s
+1658845322.05:     Instantiated Spec::Benchmark::pot3d_m728 in 0.000139952s
+1658845322.05:     Finding src.alts took 0.000028849s
+1658845322.05:   Setting up pot3d_m took 0.001715899s
+
+1658845322.05:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '605.lbm_s'
+1658845322.05:     Evaluated /lustre/SPEChpc/benchspec/HPC/605.lbm_s/Spec/object.pm in 0.001454830s
+1658845322.05:     Instantiated Spec::Benchmark::lbm_s605 in 0.000138044s
+1658845322.05:     Finding src.alts took 0.000030041s
+1658845322.05:   Setting up lbm_s took 0.001802921s
+
+1658845322.05:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '628.pot3d_s'
+1658845322.05:     Evaluated /lustre/SPEChpc/benchspec/HPC/628.pot3d_s/Spec/object.pm in 0.001623869s
+1658845322.05:     Instantiated Spec::Benchmark::pot3d_s628 in 0.000167131s
+1658845322.05:     Finding src.alts took 0.000030994s
+1658845322.05:   Setting up pot3d_s took 0.002020121s
+
+1658845322.05:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '719.clvleaf_m'
+1658845322.05:     Evaluated /lustre/SPEChpc/benchspec/HPC/719.clvleaf_m/Spec/object.pm in 0.001615047s
+1658845322.06:     Instantiated Spec::Benchmark::clvleaf_m719 in 0.000145912s
+1658845322.06:     Finding src.alts took 0.000027895s
+1658845322.06:   Setting up clvleaf_m took 0.001980066s
+
+1658845322.06:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '635.weather_s'
+1658845322.06:     Evaluated /lustre/SPEChpc/benchspec/HPC/635.weather_s/Spec/object.pm in 0.001352072s
+1658845322.06:     Instantiated Spec::Benchmark::weather_s635 in 0.000141859s
+1658845322.06:     Finding src.alts took 0.000028849s
+1658845322.06:   Setting up weather_s took 0.001713037s
+
+1658845322.06:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '534.hpgmgfv_t'
+1658845322.06:     Evaluated /lustre/SPEChpc/benchspec/HPC/534.hpgmgfv_t/Spec/object.pm in 0.001340866s
+1658845322.06:     Instantiated Spec::Benchmark::hpgmgfv_t534 in 0.000139952s
+1658845322.06:     Finding src.alts took 0.000029087s
+1658845322.06:   Setting up hpgmgfv_t took 0.001691103s
+
+1658845322.06:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '519.clvleaf_t'
+1658845322.06:     Evaluated /lustre/SPEChpc/benchspec/HPC/519.clvleaf_t/Spec/object.pm in 0.001572847s
+1658845322.06:     Instantiated Spec::Benchmark::clvleaf_t519 in 0.000149012s
+1658845322.06:     Finding src.alts took 0.000029087s
+1658845322.06:   Setting up clvleaf_t took 0.001931906s
+
+1658845322.06:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '528.pot3d_t'
+1658845322.06:     Evaluated /lustre/SPEChpc/benchspec/HPC/528.pot3d_t/Spec/object.pm in 0.001513958s
+1658845322.06:     Instantiated Spec::Benchmark::pot3d_t528 in 0.000147820s
+1658845322.06:     Finding src.alts took 0.000028849s
+1658845322.06:   Setting up pot3d_t took 0.001873970s
+
+1658845322.06:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '734.hpgmgfv_m'
+1658845322.06:     Evaluated /lustre/SPEChpc/benchspec/HPC/734.hpgmgfv_m/Spec/object.pm in 0.001386166s
+1658845322.06:     Instantiated Spec::Benchmark::hpgmgfv_m734 in 0.000143051s
+1658845322.06:     Finding src.alts took 0.000028849s
+1658845322.06:   Setting up hpgmgfv_m took 0.001741886s
+
+1658845322.06:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '999.specrand'
+1658845322.07:     Evaluated /lustre/SPEChpc/benchspec/HPC/999.specrand/Spec/object.pm in 0.001610994s
+1658845322.07:     Instantiated Spec::Benchmark::specrand999 in 0.000147820s
+1658845322.07:     Finding src.alts took 0.000390053s
+1658845322.07:   Setting up specrand took 0.002547026s
+
+1658845322.07:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '828.pot3d_l'
+1658845322.07:     Evaluated /lustre/SPEChpc/benchspec/HPC/828.pot3d_l/Spec/object.pm in 0.001372814s
+1658845322.07:     Instantiated Spec::Benchmark::pot3d_l828 in 0.000143051s
+1658845322.07:     Finding src.alts took 0.000028133s
+1658845322.07:   Setting up pot3d_l took 0.001743078s
+
+1658845322.07:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '532.sph_exa_t'
+1658845322.07:     Evaluated /lustre/SPEChpc/benchspec/HPC/532.sph_exa_t/Spec/object.pm in 0.001383066s
+1658845322.07:     Instantiated Spec::Benchmark::sph_exa_t532 in 0.000142097s
+1658845322.07:     Finding src.alts took 0.000026941s
+1658845322.07:   Setting up sph_exa_t took 0.001738787s
+
+1658845322.07:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', 'hpc.bset'
+1658845322.07:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '634.hpgmgfv_s'
+1658845322.07:     Evaluated /lustre/SPEChpc/benchspec/HPC/634.hpgmgfv_s/Spec/object.pm in 0.001400232s
+1658845322.07:     Instantiated Spec::Benchmark::hpgmgfv_s634 in 0.000145197s
+1658845322.07:     Finding src.alts took 0.000029087s
+1658845322.07:   Setting up hpgmgfv_s took 0.001775026s
+
+1658845322.07:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '535.weather_t'
+1658845322.08:     Evaluated /lustre/SPEChpc/benchspec/HPC/535.weather_t/Spec/object.pm in 0.001405001s
+1658845322.08:     Instantiated Spec::Benchmark::weather_t535 in 0.000154972s
+1658845322.08:     Finding src.alts took 0.000027895s
+1658845322.08:   Setting up weather_t took 0.001769066s
+
+1658845322.08:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '735.weather_m'
+1658845322.08:     Evaluated /lustre/SPEChpc/benchspec/HPC/735.weather_m/Spec/object.pm in 0.001380205s
+1658845322.08:     Instantiated Spec::Benchmark::weather_m735 in 0.000138998s
+1658845322.08:     Finding src.alts took 0.000028133s
+1658845322.08:   Setting up weather_m took 0.001725912s
+
+1658845322.08:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '619.clvleaf_s'
+1658845322.08:     Evaluated /lustre/SPEChpc/benchspec/HPC/619.clvleaf_s/Spec/object.pm in 0.001727819s
+1658845322.08:     Instantiated Spec::Benchmark::clvleaf_s619 in 0.000166178s
+1658845322.08:     Finding src.alts took 0.000030994s
+1658845322.08:   Setting up clvleaf_s took 0.002118111s
+
+1658845322.08:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', 'tiny.bset'
+1658845322.08:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '621.miniswp_s'
+1658845322.08:     Evaluated /lustre/SPEChpc/benchspec/HPC/621.miniswp_s/Spec/object.pm in 0.001477003s
+1658845322.08:     Instantiated Spec::Benchmark::miniswp_s621 in 0.000156879s
+1658845322.08:     Finding src.alts took 0.000031948s
+1658845322.08:   Setting up miniswp_s took 0.001873016s
+
+1658845322.08:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '505.lbm_t'
+1658845322.08:     Evaluated /lustre/SPEChpc/benchspec/HPC/505.lbm_t/Spec/object.pm in 0.001317978s
+1658845322.09:     Instantiated Spec::Benchmark::lbm_t505 in 0.000141859s
+1658845322.09:     Finding src.alts took 0.000028849s
+1658845322.09:   Setting up lbm_t took 0.001672029s
+
+1658845322.09:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '834.hpgmgfv_l'
+1658845322.09:     Evaluated /lustre/SPEChpc/benchspec/HPC/834.hpgmgfv_l/Spec/object.pm in 0.001461983s
+1658845322.09:     Instantiated Spec::Benchmark::hpgmgfv_l834 in 0.000139952s
+1658845322.09:     Finding src.alts took 0.000028133s
+1658845322.09:   Setting up hpgmgfv_l took 0.001810074s
+
+1658845322.09:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '819.clvleaf_l'
+1658845322.09:     Evaluated /lustre/SPEChpc/benchspec/HPC/819.clvleaf_l/Spec/object.pm in 0.001621008s
+1658845322.09:     Instantiated Spec::Benchmark::clvleaf_l819 in 0.000144958s
+1658845322.09:     Finding src.alts took 0.000028849s
+1658845322.09:   Setting up clvleaf_l took 0.001973867s
+
+1658845322.09:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '518.tealeaf_t'
+1658845322.09:     Evaluated /lustre/SPEChpc/benchspec/HPC/518.tealeaf_t/Spec/object.pm in 0.001406908s
+1658845322.09:     Instantiated Spec::Benchmark::tealeaf_t518 in 0.000140905s
+1658845322.09:     Finding src.alts took 0.000029087s
+1658845322.09:   Setting up tealeaf_t took 0.001759052s
+
+1658845322.09:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', 'small.bset'
+1658845322.09:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '718.tealeaf_m'
+1658845322.09:     Evaluated /lustre/SPEChpc/benchspec/HPC/718.tealeaf_m/Spec/object.pm in 0.001403093s
+1658845322.09:     Instantiated Spec::Benchmark::tealeaf_m718 in 0.000144005s
+1658845322.09:     Finding src.alts took 0.000030041s
+1658845322.09:   Setting up tealeaf_m took 0.001775980s
+
+1658845322.10:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/HPC', '/lustre/SPEChpc/benchspec', '613.soma_s'
+1658845322.10:     Evaluated /lustre/SPEChpc/benchspec/HPC/613.soma_s/Spec/object.pm in 0.001389980s
+1658845322.10:     Instantiated Spec::Benchmark::soma_s613 in 0.000144005s
+1658845322.10:     Finding src.alts took 0.000029087s
+1658845322.10:   Setting up soma_s took 0.001744986s
+
+1658845322.10: Setting up suite took 0.069307804s
+1658845322.10: Reading suite directory for 'flags-mandatory.xml', '/lustre/SPEChpc/benchspec'
+1658845322.10: Reading suite directory for 'version.txt', '/lustre/SPEChpc/benchspec'
+1658845322.10: Reading suite directory for 'common', '/lustre/SPEChpc/benchspec'
+1658845322.10:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/common', '/lustre/SPEChpc/benchspec', 'specrand'
+1658845322.10:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/common', '/lustre/SPEChpc/benchspec', 'sha-2'
+1658845322.10:   Reading benchmark directory for '/lustre/SPEChpc/benchspec/common', '/lustre/SPEChpc/benchspec', 'spec_qsort'
+1658845322.10: Setting up suite took 0.000322104s
+1658845322.10: Reading suite directory for 'Makefile.defaults', '/lustre/SPEChpc/benchspec'
+1658845322.10: found 31 benchmarks in 5 benchsets.
+1658845322.11: Reading config file '/lustre/SPEChpc/config/aws_g3.cfg'
+1658845322.11: NOTICE: Skipping expression evaluation for 'label' on line 2 of
+1658845322.11:         /lustre/SPEChpc/config/aws_g3.cfg
+1658845322.11: NOTICE: Skipping expression evaluation for 'model' on line 6 of
+1658845322.11:         /lustre/SPEChpc/config/aws_g3.cfg
+1658845322.11: Reading included config file '/lustre/SPEChpc/config/aws.inc'
+1658845322.11: WARNING: Duplicate setting for "node_compute_sw_os000" on line 28
+1658845322.11:          of /lustre/SPEChpc/config/aws_g3.cfg
+1658845322.11: WARNING: Duplicate setting for "node_compute_sw_os001" on line 29
+1658845322.11:          of /lustre/SPEChpc/config/aws_g3.cfg
+
+1658845322.14:   '528.pot3d_t' added
+
+1658845322.14: ERROR: A reportable run was requested; individual benchmark selection is not
+1658845322.14:        allowed.  The benchmarks needed for SPEChpc2021_tny are not all present.
+1658845322.14:        If you really want to run only selected benchmarks, then add the switch
+1658845322.14:         '--noreportable' to the command line.
+
+1658845322.14: No benchmark suite selected!'all' replaced by ('tiny', 'small', 'medium', 'large') at position 0 of selection list
+1658845322.14:   Expected one or more of 'tiny', 'small', 'medium', 'large' or 'all'.
+
+1658845322.14: The log for this run is in /home/sam/g3_spec_results/tiny/tiny_gnu_64/result/hpc2021.005.log
+1658845322.14: The debug log for this run is in /home/sam/g3_spec_results/tiny/tiny_gnu_64/result/hpc2021.005.log.debug
+
+1658845322.14: *
+1658845322.14: * Temporary files were NOT deleted; keeping temporaries such as
+1658845322.14: * /home/sam/g3_spec_results/tiny/tiny_gnu_64/result/hpc2021.005.log.debug
+1658845322.14: * (These may be large!)
+1658845322.14: *
+1658845322.14: runhpc finished at 2022-07-26 14:22:02; 0 total seconds elapsed

@@ -2,10 +2,13 @@
 #SBATCH --job-name SPEC_tiny_gnu_512
 #SBATCH --partition graviton3
 #SBATCH --nodes 8
-#SBATCH --time 00:30:00
+#SBATCH --ntasks 512
+#SBATCH --time 04:00:00
 #SBATCH --output SPEC_tiny_gnu_512.out
 
-module load openmpi/4.1.1
+cd ../../../../../lustre/SPEChpc
+. ./shrc
+cd $SLURM_SUBMIT_DIR
 
-runhpc --rebuild --config=aws_g3_gnu_8.cfg --ranks=512 --noreportable --output_format=text --output_root=/home/sam/g3_spec_results/tiny/tiny_gnu_512 --iterations=1 tiny
+runhpc --rebuild --config=aws_g3.cfg --ranks=512 --reportable --output_format=all --output_root=/home/sam/g3_spec_results/tiny/tiny_gnu_512 --iterations=2 tiny
 

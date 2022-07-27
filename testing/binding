@@ -1,11 +1,14 @@
 #!/bin/bash
 #SBATCH --job-name binding
 #SBATCH --nodes 2
+#SBATCH --ntasks 4
+#SBATCH --ntasks-per-node 2
+#SBATCH --cpus-per-task 32
 #SBATCH --time 00:10:00
 #SBATCH --partition graviton3 
 #SBATCH --output binding.out
 
-export OMP_NUM_THREADS=3
+export OMP_PROC_BIND=true
 
-srun -n 4 --ntasks-per-node 2 -c 3 ./xthi 
+mpirun --map-by ppr:$SLURM_NTASKS_PER_NODE:node:PE=$SLURM_CPUS_PER_TASK -np $SLURM_NTASKS ./xthi
 
