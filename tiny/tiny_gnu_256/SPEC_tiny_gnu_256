@@ -3,7 +3,7 @@
 #SBATCH --partition graviton3
 #SBATCH --nodes 4
 #SBATCH --ntasks 256
-#SBATCH --time 06:00:00
+#SBATCH --time 04:00:00
 #SBATCH --output SPEC_tiny_gnu_256.out
 
 cd ../../../../../lustre/SPEChpc

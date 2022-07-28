@@ -3,14 +3,11 @@
 #SBATCH --partition graviton3
 #SBATCH --nodes 1
 #SBATCH --ntasks 64
-#SBATCH --time 00:30:00
+#SBATCH --time 04:00:00
 #SBATCH --output SPEC_tiny_gnu_64.out
 
 cd ../../../../../lustre/SPEChpc
 . ./shrc
 cd $SLURM_SUBMIT_DIR
 
-spack load gcc@9.3.0
-
-runhpc --rebuild --config=aws_g3.cfg --ranks=64 --noreportable --output_format=all --output_root=/home/sam/g3_spec_results/tiny/tiny_gnu_64 --iterations=1 528.pot3d_t
-
+runhpc --rebuild --config=aws_g3.cfg --ranks=64 --reportable --output_format=all --output_root=/home/sam/g3_spec_results/tiny/tiny_gnu_64 --iterations=2 tiny
