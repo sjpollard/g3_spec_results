@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH --job-name SPEC_tiny_gnu7_128
+#SBATCH --partition graviton3
+#SBATCH --nodes 2
+#SBATCH --ntasks 128
+#SBATCH --time 02:00:00
+#SBATCH --output SPEC_tiny_gnu7_128.out
+
+cd ../../../../../lustre/SPEChpc
+. ./shrc
+cd $SLURM_SUBMIT_DIR
+
+runhpc --rebuild --config=aws_g3_gnu7.cfg --ranks=128 --reportable --output_format=all --output_root=/home/sam/g3_spec_results/tiny/tiny_gnu7_128 --iterations=2 tiny
