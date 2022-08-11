@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH --job-name SPEC_tiny_gnu7_1_64
+#SBATCH --partition graviton3
+#SBATCH --nodes 1
+#SBATCH --ntasks 1
+#SBATCH --ntasks-per-node 1
+#SBATCH --cpus-per-task 64
+#SBATCH --time 08:00:00
+#SBATCH --output SPEC_tiny_gnu7_1_64.out
+
+cd ../../../../../lustre/SPEChpc
+. ./shrc
+cd $SLURM_SUBMIT_DIR
+
+runhpc --rebuild --define model=omp --define ppn=1 --pmodel=OMP --config=aws_g3_gnu7.cfg --ranks=1 --threads=64 --reportable --output_format=all --output_root=/home/sam/g3_spec_results/tiny/tiny_gnu7_1_64 --iterations=2 tiny
