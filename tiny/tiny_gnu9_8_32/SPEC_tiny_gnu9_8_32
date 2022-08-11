@@ -5,7 +5,7 @@
 #SBATCH --ntasks 8
 #SBATCH --ntasks-per-node 2
 #SBATCH --cpus-per-task 32
-#SBATCH --time 04:00:00
+#SBATCH --time 06:00:00
 #SBATCH --output SPEC_tiny_gnu9_8_32.out
 
 cd ../../../../../lustre/SPEChpc

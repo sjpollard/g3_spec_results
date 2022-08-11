@@ -1561,6 +1561,3 @@ Setting Up Run Directories
 Running Benchmarks
   Running (#1) 505.lbm_t ref base aws_mpi [2022-08-11 18:08:58]
 /lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/505.lbm_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/505.lbm_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
-  Running (#1) 513.soma_t ref base aws_mpi [2022-08-11 18:16:19]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/513.soma_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
