@@ -1564,3 +1564,79 @@ Running Benchmarks
 /lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/505.lbm_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
   Running (#1) 513.soma_t ref base aws_mpi [2022-08-11 18:16:19]
 /lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/513.soma_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/513.soma_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#1) 518.tealeaf_t ref base aws_mpi [2022-08-11 18:30:07]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/518.tealeaf_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/518.tealeaf_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#1) 519.clvleaf_t ref base aws_mpi [2022-08-11 18:41:47]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/519.clvleaf_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/519.clvleaf_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#1) 521.miniswp_t ref base aws_mpi [2022-08-11 18:51:13]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/521.miniswp_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/521.miniswp_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#1) 528.pot3d_t ref base aws_mpi [2022-08-11 18:57:09]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/528.pot3d_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/528.pot3d_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#1) 532.sph_exa_t ref base aws_mpi [2022-08-11 19:12:24]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/532.sph_exa_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/532.sph_exa_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#1) 534.hpgmgfv_t ref base aws_mpi [2022-08-11 19:20:40]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/534.hpgmgfv_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/534.hpgmgfv_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#1) 535.weather_t ref base aws_mpi [2022-08-11 19:28:47]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/535.weather_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/535.weather_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#2) 505.lbm_t ref base aws_mpi [2022-08-11 19:40:48]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/505.lbm_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/505.lbm_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#2) 513.soma_t ref base aws_mpi [2022-08-11 19:48:12]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/513.soma_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/513.soma_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#2) 518.tealeaf_t ref base aws_mpi [2022-08-11 20:01:51]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/518.tealeaf_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/518.tealeaf_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#2) 519.clvleaf_t ref base aws_mpi [2022-08-11 20:13:31]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/519.clvleaf_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/519.clvleaf_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#2) 521.miniswp_t ref base aws_mpi [2022-08-11 20:22:56]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/521.miniswp_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/521.miniswp_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#2) 528.pot3d_t ref base aws_mpi [2022-08-11 20:28:52]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/528.pot3d_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/528.pot3d_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#2) 532.sph_exa_t ref base aws_mpi [2022-08-11 20:44:06]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/532.sph_exa_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/532.sph_exa_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#2) 534.hpgmgfv_t ref base aws_mpi [2022-08-11 20:52:21]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/534.hpgmgfv_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/534.hpgmgfv_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#2) 535.weather_t ref base aws_mpi [2022-08-11 21:00:28]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/535.weather_t/run/run_base_ref_aws_mpi.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_64/benchspec/HPC/535.weather_t/run/run_base_ref_aws_mpi.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+Success: 2x505.lbm_t 2x513.soma_t 2x518.tealeaf_t 2x519.clvleaf_t 2x521.miniswp_t 2x528.pot3d_t 2x532.sph_exa_t 2x534.hpgmgfv_t 2x535.weather_t
+Producing Raw Reports
+ label: aws_mpi
+  workload: ref
+   metric: SPEChpc2021_tny_base
+    format: raw -> /home/sam/g3_spec_results/tiny/tiny_gnu9_64/result/hpc2021_tny.001.tiny.rsf
+Parsing flags for 505.lbm_t base: done
+Parsing flags for 513.soma_t base: done
+Parsing flags for 518.tealeaf_t base: done
+Parsing flags for 519.clvleaf_t base: done
+Parsing flags for 521.miniswp_t base: done
+Parsing flags for 528.pot3d_t base: done
+Parsing flags for 532.sph_exa_t base: done
+Parsing flags for 534.hpgmgfv_t base: done
+Parsing flags for 535.weather_t base: done
+Doing flag reduction: done
+    format: flags -> /home/sam/g3_spec_results/tiny/tiny_gnu9_64/result/hpc2021_tny.001.tiny.flags.html
+    format: cfg -> /home/sam/g3_spec_results/tiny/tiny_gnu9_64/result/hpc2021_tny.001.tiny.cfg, /home/sam/g3_spec_results/tiny/tiny_gnu9_64/result/hpc2021_tny.001.tiny.orig.cfg
+    format: CSV -> /home/sam/g3_spec_results/tiny/tiny_gnu9_64/result/hpc2021_tny.001.tiny.csv
+    format: PDF -> /home/sam/g3_spec_results/tiny/tiny_gnu9_64/result/hpc2021_tny.001.tiny.pdf
+    format: HTML -> /home/sam/g3_spec_results/tiny/tiny_gnu9_64/result/hpc2021_tny.001.tiny.html, /home/sam/g3_spec_results/tiny/tiny_gnu9_64/result/invalid.gif
+    format: PostScript -> /home/sam/g3_spec_results/tiny/tiny_gnu9_64/result/hpc2021_tny.001.tiny.ps
+    format: Text -> /home/sam/g3_spec_results/tiny/tiny_gnu9_64/result/hpc2021_tny.001.tiny.txt
+
+The log for this run is in /home/sam/g3_spec_results/tiny/tiny_gnu9_64/result/hpc2021.001.log
+
+runhpc finished at 2022-08-11 21:12:36; 11081 total seconds elapsed
