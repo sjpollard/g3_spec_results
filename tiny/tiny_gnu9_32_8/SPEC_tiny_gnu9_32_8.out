@@ -3,7 +3,7 @@ Copyright 1995-2021 Standard Performance Evaluation Corporation (SPEC)
 
 runhpc v.unknown
 Using 'linux-aarch64' tools
-Reading file manifests... read 14938 entries from 2 files in 0.05s (289394 files/s)
+Reading file manifests... read 14938 entries from 2 files in 0.05s (327006 files/s)
 Loading runhpc modules.................
 Locating benchmarks...found 31 benchmarks in 5 benchsets.
 Reading config file '/lustre/SPEChpc/config/aws_g3_gnu9.cfg'
@@ -38,7 +38,7 @@ NOTICE: Suite version checking failed;got
 
 Benchmarks selected: 505.lbm_t, 513.soma_t, 518.tealeaf_t, 519.clvleaf_t, 521.miniswp_t, 528.pot3d_t, 532.sph_exa_t, 534.hpgmgfv_t, 535.weather_t
 Compiling Binaries
-  Building 505.lbm_t base aws_omp: (build_base_aws_omp.0000) [2022-08-12 23:37:23]
+  Building 505.lbm_t base aws_omp: (build_base_aws_omp.0000) [2022-08-13 00:34:08]
 specmake --output-sync -j 10 clean
 rm -rf *.o  lbm.out
 find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
@@ -46,8 +46,8 @@ rm -rf lbm
 rm -rf lbm.exe
 rm -rf core
 specmake --output-sync -j 10 build
-mpicc -c -o main.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        main.c
 mpicc -c -o specrand/specrand.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        specrand/specrand.c
+mpicc -c -o main.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        main.c
 mpicc -c -o lbm.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        lbm.c
 mpicc      -Ofast -fopenmp      -lm    lbm.o main.o specrand/specrand.o             -lm         -o lbm  
 specmake --output-sync -j 10 options
@@ -82,7 +82,7 @@ Copyright (C) 2019 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-  Building 513.soma_t base aws_omp: (build_base_aws_omp.0000) [2022-08-12 23:37:29]
+  Building 513.soma_t base aws_omp: (build_base_aws_omp.0000) [2022-08-13 00:34:11]
 specmake --output-sync -j 10 clean
 rm -rf *.o  stateR42time10Npoly32000.txt
 find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
@@ -93,23 +93,23 @@ specmake --output-sync -j 10 build
 mpicc -c -o bond.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        bond.c
 mpicc -c -o device.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        device.c
 mpicc -c -o allocator.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        allocator.c
+mpicc -c -o init.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        init.c
 mpicc -c -o autotuner.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        autotuner.c
 mpicc -c -o monomer.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        monomer.c
 mpicc -c -o generate_positions.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        generate_positions.c
 mpicc -c -o independent_sets.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        independent_sets.c
 mpicc -c -o io.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        io.c
-mpicc -c -o init.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        init.c
 mpicc -c -o mpiroutines.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        mpiroutines.c
 mpicc -c -o cmdline.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        cmdline.c
 mpicc -c -o soma_config.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        soma_config.c
-mpicc -c -o mesh.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        mesh.c
-mpicc -c -o polymer.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        polymer.c
 mpicc -c -o phase.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        phase.c
-mpicc -c -o mc.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        mc.c
+mpicc -c -o polymer.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        polymer.c
+mpicc -c -o mesh.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        mesh.c
+mpicc -c -o soma.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        soma.c
 mpicc -c -o ana.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        ana.c
+mpicc -c -o mc.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        mc.c
 mpicc -c -o soma_util.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        soma_util.c
 mpicc -c -o test.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        test.c
-mpicc -c -o soma.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        soma.c
 mpicc -c -o rng.o -DSPEC -DNDEBUG   -Ofast -fopenmp         -lm  -DSPEC_OPENMP        rng.c
 mpicc      -Ofast -fopenmp      -lm    allocator.o ana.o autotuner.o bond.o cmdline.o device.o generate_positions.o independent_sets.o init.o io.o mc.o mesh.o monomer.o mpiroutines.o phase.o polymer.o rng.o soma.o soma_config.o soma_util.o test.o             -lm         -o soma  
 specmake --output-sync -j 10 options
@@ -144,7 +144,7 @@ Copyright (C) 2019 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-  Building 518.tealeaf_t base aws_omp: (build_base_aws_omp.0000) [2022-08-12 23:37:32]
+  Building 518.tealeaf_t base aws_omp: (build_base_aws_omp.0000) [2022-08-13 00:34:13]
 specmake --output-sync -j 10 clean
 rm -rf *.o  tea.out
 find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
@@ -162,12 +162,12 @@ mpicc -c -o 2d/initialise.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast
 mpicc -c -o 2d/drivers/cg_driver.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/drivers/cg_driver.c
 mpicc -c -o 2d/shared.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/shared.c
 mpicc -c -o 2d/drivers/halo_update_driver.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/drivers/halo_update_driver.c
-mpicc -c -o 2d/drivers/cheby_driver.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/drivers/cheby_driver.c
 mpicc -c -o 2d/drivers/field_summary_driver.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/drivers/field_summary_driver.c
+mpicc -c -o 2d/drivers/cheby_driver.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/drivers/cheby_driver.c
 mpicc -c -o 2d/drivers/kernel_initialise_driver.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/drivers/kernel_initialise_driver.c
 mpicc -c -o 2d/drivers/set_chunk_data_driver.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/drivers/set_chunk_data_driver.c
-mpicc -c -o 2d/drivers/jacobi_driver.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/drivers/jacobi_driver.c
 mpicc -c -o 2d/drivers/eigenvalue_driver.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/drivers/eigenvalue_driver.c
+mpicc -c -o 2d/drivers/jacobi_driver.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/drivers/jacobi_driver.c
 mpicc -c -o 2d/parse_config.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/parse_config.c
 mpicc -c -o 2d/drivers/ppcg_driver.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/drivers/ppcg_driver.c
 mpicc -c -o 2d/drivers/set_chunk_state_driver.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/drivers/set_chunk_state_driver.c
@@ -176,12 +176,12 @@ mpicc -c -o 2d/drivers/solve_finished_driver.o -DSPEC -DNDEBUG  -I2d/drivers/ -I
 mpicc -c -o 2d/c_kernels/field_summary.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/c_kernels/field_summary.c
 mpicc -c -o 2d/drivers/remote_halo_driver.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/drivers/remote_halo_driver.c
 mpicc -c -o 2d/c_kernels/cheby.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/c_kernels/cheby.c
-mpicc -c -o 2d/c_kernels/kernel_initialise.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/c_kernels/kernel_initialise.c
 mpicc -c -o 2d/c_kernels/jacobi.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/c_kernels/jacobi.c
+mpicc -c -o 2d/c_kernels/kernel_initialise.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/c_kernels/kernel_initialise.c
 mpicc -c -o 2d/c_kernels/kernel_interface.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/c_kernels/kernel_interface.c
+mpicc -c -o 2d/c_kernels/ppcg.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/c_kernels/ppcg.c
 mpicc -c -o 2d/c_kernels/set_chunk_data.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/c_kernels/set_chunk_data.c
 mpicc -c -o 2d/c_kernels/local_halos.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/c_kernels/local_halos.c
-mpicc -c -o 2d/c_kernels/ppcg.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/c_kernels/ppcg.c
 mpicc -c -o 2d/c_kernels/cg.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/c_kernels/cg.c
 mpicc -c -o 2d/c_kernels/set_chunk_state.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/c_kernels/set_chunk_state.c
 mpicc -c -o 2d/c_kernels/store_energy.o -DSPEC -DNDEBUG  -I2d/drivers/ -I2d/c_kernels -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2d/c_kernels/store_energy.c
@@ -220,7 +220,7 @@ Copyright (C) 2019 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-  Building 519.clvleaf_t base aws_omp: (build_base_aws_omp.0000) [2022-08-12 23:37:34]
+  Building 519.clvleaf_t base aws_omp: (build_base_aws_omp.0000) [2022-08-13 00:34:16]
 specmake --output-sync -j 10 clean
 rm -rf *.o  clover.out
 find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
@@ -234,10 +234,10 @@ specmake --output-sync -j 10 build
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG definitions.F90 -o definitions.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG advec_cell_driver.F90 -o advec_cell_driver.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG advec_mom_driver.F90 -o advec_mom_driver.fppized.f90
-/lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG pack_kernel.F90 -o pack_kernel.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG advec_cell_kernel.F90 -o advec_cell_kernel.fppized.f90
-/lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG advection.F90 -o advection.fppized.f90
+/lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG pack_kernel.F90 -o pack_kernel.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG advec_mom_kernel.F90 -o advec_mom_kernel.fppized.f90
+/lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG advection.F90 -o advection.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG update_halo.F90 -o update_halo.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG update_tile_halo.F90 -o update_tile_halo.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG build_field.F90 -o build_field.fppized.f90
@@ -247,18 +247,18 @@ specmake --output-sync -j 10 build
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG field_summary.F90 -o field_summary.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG field_summary_kernel.F90 -o field_summary_kernel.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG ideal_gas.F90 -o ideal_gas.fppized.f90
-/lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG update_halo_kernel.F90 -o update_halo_kernel.fppized.f90
-/lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG clover.F90 -o clover.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG ideal_gas_kernel.F90 -o ideal_gas_kernel.fppized.f90
+/lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG clover.F90 -o clover.fppized.f90
+/lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG update_halo_kernel.F90 -o update_halo_kernel.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG flux_calc.F90 -o flux_calc.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG update_tile_halo_kernel.F90 -o update_tile_halo_kernel.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG flux_calc_kernel.F90 -o flux_calc_kernel.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG generate_chunk.F90 -o generate_chunk.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG generate_chunk_kernel.F90 -o generate_chunk_kernel.fppized.f90
-/lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG PdV.F90 -o PdV.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG hydro.F90 -o hydro.fppized.f90
-/lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG report.F90 -o report.fppized.f90
+/lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG PdV.F90 -o PdV.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG PdV_kernel.F90 -o PdV_kernel.fppized.f90
+/lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG report.F90 -o report.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG revert.F90 -o revert.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG revert_kernel.F90 -o revert_kernel.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG reset_field.F90 -o reset_field.fppized.f90
@@ -269,21 +269,21 @@ specmake --output-sync -j 10 build
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG initialise_chunk.F90 -o initialise_chunk.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG initialise_chunk_kernel.F90 -o initialise_chunk_kernel.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG initialise.F90 -o initialise.fppized.f90
+/lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG timer.F90 -o timer.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG parse.F90 -o parse.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG start.F90 -o start.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG read_input.F90 -o read_input.fppized.f90
-/lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG timer.F90 -o timer.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG visit.F90 -o visit.fppized.f90
 mpif90 -c -o data.fppized.o -Ofast -fopenmp -fno-stack-arrays data.fppized.f90
-mpif90 -c -o ideal_gas_kernel.fppized.o -Ofast -fopenmp -fno-stack-arrays ideal_gas_kernel.fppized.f90
 mpif90 -c -o flux_calc_kernel.fppized.o -Ofast -fopenmp -fno-stack-arrays flux_calc_kernel.fppized.f90
+mpif90 -c -o ideal_gas_kernel.fppized.o -Ofast -fopenmp -fno-stack-arrays ideal_gas_kernel.fppized.f90
 mpif90 -c -o field_summary_kernel.fppized.o -Ofast -fopenmp -fno-stack-arrays field_summary_kernel.fppized.f90
 mpif90 -c -o accelerate_kernel.fppized.o -Ofast -fopenmp -fno-stack-arrays accelerate_kernel.fppized.f90
 mpif90 -c -o calc_dt_kernel.fppized.o -Ofast -fopenmp -fno-stack-arrays calc_dt_kernel.fppized.f90
 mpif90 -c -o revert_kernel.fppized.o -Ofast -fopenmp -fno-stack-arrays revert_kernel.fppized.f90
+mpif90 -c -o PdV_kernel.fppized.o -Ofast -fopenmp -fno-stack-arrays PdV_kernel.fppized.f90
 mpif90 -c -o timer.fppized.o -Ofast -fopenmp -fno-stack-arrays timer.fppized.f90
 mpif90 -c -o generate_chunk_kernel.fppized.o -Ofast -fopenmp -fno-stack-arrays generate_chunk_kernel.fppized.f90
-mpif90 -c -o PdV_kernel.fppized.o -Ofast -fopenmp -fno-stack-arrays PdV_kernel.fppized.f90
 mpif90 -c -o viscosity_kernel.fppized.o -Ofast -fopenmp -fno-stack-arrays viscosity_kernel.fppized.f90
 mpif90 -c -o reset_field_kernel.fppized.o -Ofast -fopenmp -fno-stack-arrays reset_field_kernel.fppized.f90
 mpif90 -c -o pack_kernel.fppized.o -Ofast -fopenmp -fno-stack-arrays pack_kernel.fppized.f90
@@ -297,16 +297,16 @@ mpif90 -c -o clover.fppized.o -Ofast -fopenmp -fno-stack-arrays clover.fppized.f
 mpif90 -c -o clover_leaf.fppized.o -Ofast -fopenmp -fno-stack-arrays clover_leaf.fppized.f90
 mpif90 -c -o advec_cell_driver.fppized.o -Ofast -fopenmp -fno-stack-arrays advec_cell_driver.fppized.f90
 mpif90 -c -o ideal_gas.fppized.o -Ofast -fopenmp -fno-stack-arrays ideal_gas.fppized.f90
-mpif90 -c -o accelerate.fppized.o -Ofast -fopenmp -fno-stack-arrays accelerate.fppized.f90
 mpif90 -c -o advec_mom_driver.fppized.o -Ofast -fopenmp -fno-stack-arrays advec_mom_driver.fppized.f90
-mpif90 -c -o calc_dt.fppized.o -Ofast -fopenmp -fno-stack-arrays calc_dt.fppized.f90
-mpif90 -c -o flux_calc.fppized.o -Ofast -fopenmp -fno-stack-arrays flux_calc.fppized.f90
+mpif90 -c -o accelerate.fppized.o -Ofast -fopenmp -fno-stack-arrays accelerate.fppized.f90
 mpif90 -c -o generate_chunk.fppized.o -Ofast -fopenmp -fno-stack-arrays generate_chunk.fppized.f90
+mpif90 -c -o flux_calc.fppized.o -Ofast -fopenmp -fno-stack-arrays flux_calc.fppized.f90
+mpif90 -c -o calc_dt.fppized.o -Ofast -fopenmp -fno-stack-arrays calc_dt.fppized.f90
 mpif90 -c -o update_tile_halo.fppized.o -Ofast -fopenmp -fno-stack-arrays update_tile_halo.fppized.f90
 mpif90 -c -o revert.fppized.o -Ofast -fopenmp -fno-stack-arrays revert.fppized.f90
+mpif90 -c -o initialise_chunk.fppized.o -Ofast -fopenmp -fno-stack-arrays initialise_chunk.fppized.f90
 mpif90 -c -o viscosity.fppized.o -Ofast -fopenmp -fno-stack-arrays viscosity.fppized.f90
 mpif90 -c -o reset_field.fppized.o -Ofast -fopenmp -fno-stack-arrays reset_field.fppized.f90
-mpif90 -c -o initialise_chunk.fppized.o -Ofast -fopenmp -fno-stack-arrays initialise_chunk.fppized.f90
 mpif90 -c -o report.fppized.o -Ofast -fopenmp -fno-stack-arrays report.fppized.f90
 mpif90 -c -o update_halo.fppized.o -Ofast -fopenmp -fno-stack-arrays update_halo.fppized.f90
 mpif90 -c -o field_summary.fppized.o -Ofast -fopenmp -fno-stack-arrays field_summary.fppized.f90
@@ -364,7 +364,7 @@ Copyright (C) 2019 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-  Building 521.miniswp_t base aws_omp: (build_base_aws_omp.0000) [2022-08-12 23:37:39]
+  Building 521.miniswp_t base aws_omp: (build_base_aws_omp.0000) [2022-08-13 00:34:20]
 specmake --output-sync -j 10 clean
 rm -rf *.o  sweep_1.out
 find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
@@ -380,8 +380,8 @@ mpicc -c -o 1_base/arguments.o -DSPEC -DNDEBUG  -DSPEC -DUSE_MPI -DUSE_KBA -DUSE
 mpicc -c -o 1_base/pointer.o -DSPEC -DNDEBUG  -DSPEC -DUSE_MPI -DUSE_KBA -DUSE_ACCELDIR -I1_base/ -I2_sweeper_base/ -I3_sweeper/ -Ofast -fopenmp         -lm  -DSPEC_OPENMP        1_base/pointer.c
 mpicc -c -o 1_base/env_mpi.o -DSPEC -DNDEBUG  -DSPEC -DUSE_MPI -DUSE_KBA -DUSE_ACCELDIR -I1_base/ -I2_sweeper_base/ -I3_sweeper/ -Ofast -fopenmp         -lm  -DSPEC_OPENMP        1_base/env_mpi.c
 mpicc -c -o 2_sweeper_base/array_operations.o -DSPEC -DNDEBUG  -DSPEC -DUSE_MPI -DUSE_KBA -DUSE_ACCELDIR -I1_base/ -I2_sweeper_base/ -I3_sweeper/ -Ofast -fopenmp         -lm  -DSPEC_OPENMP        2_sweeper_base/array_operations.c
-mpicc -c -o 3_sweeper/stepscheduler_kba.o -DSPEC -DNDEBUG  -DSPEC -DUSE_MPI -DUSE_KBA -DUSE_ACCELDIR -I1_base/ -I2_sweeper_base/ -I3_sweeper/ -Ofast -fopenmp         -lm  -DSPEC_OPENMP        3_sweeper/stepscheduler_kba.c
 mpicc -c -o 3_sweeper/quantities.o -DSPEC -DNDEBUG  -DSPEC -DUSE_MPI -DUSE_KBA -DUSE_ACCELDIR -I1_base/ -I2_sweeper_base/ -I3_sweeper/ -Ofast -fopenmp         -lm  -DSPEC_OPENMP        3_sweeper/quantities.c
+mpicc -c -o 3_sweeper/stepscheduler_kba.o -DSPEC -DNDEBUG  -DSPEC -DUSE_MPI -DUSE_KBA -DUSE_ACCELDIR -I1_base/ -I2_sweeper_base/ -I3_sweeper/ -Ofast -fopenmp         -lm  -DSPEC_OPENMP        3_sweeper/stepscheduler_kba.c
 mpicc -c -o 3_sweeper/faces_kba.o -DSPEC -DNDEBUG  -DSPEC -DUSE_MPI -DUSE_KBA -DUSE_ACCELDIR -I1_base/ -I2_sweeper_base/ -I3_sweeper/ -Ofast -fopenmp         -lm  -DSPEC_OPENMP        3_sweeper/faces_kba.c
 mpicc -c -o 4_driver/sweep.o -DSPEC -DNDEBUG  -DSPEC -DUSE_MPI -DUSE_KBA -DUSE_ACCELDIR -I1_base/ -I2_sweeper_base/ -I3_sweeper/ -Ofast -fopenmp         -lm  -DSPEC_OPENMP        4_driver/sweep.c
 mpicc -c -o 4_driver/runner.o -DSPEC -DNDEBUG  -DSPEC -DUSE_MPI -DUSE_KBA -DUSE_ACCELDIR -I1_base/ -I2_sweeper_base/ -I3_sweeper/ -Ofast -fopenmp         -lm  -DSPEC_OPENMP        4_driver/runner.c
@@ -419,7 +419,7 @@ Copyright (C) 2019 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-  Building 528.pot3d_t base aws_omp: (build_base_aws_omp.0000) [2022-08-12 23:37:41]
+  Building 528.pot3d_t base aws_omp: (build_base_aws_omp.0000) [2022-08-13 00:34:22]
 specmake --output-sync -j 10 clean
 rm -rf *.o  pot3d1.out
 find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
@@ -443,22 +443,20 @@ specmake --output-sync -j 10 build
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG -Ihdf5 -Ihdf5/include -DNDEBUG hdf5/H5Rff.F90 -o hdf5/H5Rff.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG -Ihdf5 -Ihdf5/include -DNDEBUG hdf5/H5Zff.F90 -o hdf5/H5Zff.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG -Ihdf5 -Ihdf5/include -DNDEBUG zm_parse_modules.F90 -o zm_parse_modules.fppized.f90
-/lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG -Ihdf5 -Ihdf5/include -DNDEBUG hdf5/H5_ff.F90 -o hdf5/H5_ff.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG -Ihdf5 -Ihdf5/include -DNDEBUG hdf5/H5Sff.F90 -o hdf5/H5Sff.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG -Ihdf5 -Ihdf5/include -DNDEBUG hdf5/H5DSff.F90 -o hdf5/H5DSff.fppized.f90
+/lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG -Ihdf5 -Ihdf5/include -DNDEBUG hdf5/H5_ff.F90 -o hdf5/H5_ff.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG -Ihdf5 -Ihdf5/include -DNDEBUG zm_sds_modules.F90 -o zm_sds_modules.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG -Ihdf5 -Ihdf5/include -DNDEBUG zm_parse.F90 -o zm_parse.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG -Ihdf5 -Ihdf5/include -DNDEBUG hdf5/H5Tff.F90 -o hdf5/H5Tff.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG -Ihdf5 -Ihdf5/include -DNDEBUG zm_sds.F90 -o zm_sds.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG -Ihdf5 -Ihdf5/include -DNDEBUG pot3d.F90 -o pot3d.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG -Ihdf5 -Ihdf5/include -DNDEBUG hdf5/H5Pff.F90 -o hdf5/H5Pff.fppized.f90
-/lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG -Ihdf5 -Ihdf5/include -DNDEBUG hdf5/H5_gen.F90 -o hdf5/H5_gen.fppized.f90
 mpicc -c -o hdf5/H5ACdbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5ACdbg.c
-mpicc -c -o hdf5/H5Af.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Af.c
+/lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG -Ihdf5 -Ihdf5/include -DNDEBUG hdf5/H5_gen.F90 -o hdf5/H5_gen.fppized.f90
 mpicc -c -o hdf5/H5Abtree2.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Abtree2.c
 mpicc -c -o hdf5/H5ACproxy_entry.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5ACproxy_entry.c
-mpicc -c -o hdf5/H5Adeprec.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Adeprec.c
-mpicc -c -o hdf5/H5Atest.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Atest.c
+mpicc -c -o hdf5/H5Af.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Af.c
 mpicc -c -o hdf5/H5.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5.c
 In file included from hdf5/H5.c:22:
 hdf5/H5.c: In function 'H5check_version':
@@ -468,15 +466,15 @@ hdf5/include/H5private.h:1368:31: warning: 'strncat' specified bound 1 equals so
 hdf5/H5.c:806:6: note: in expansion of macro 'HDstrncat'
   806 |      HDstrncat(lib_str, "-", (size_t)1);
       |      ^~~~~~~~~
+mpicc -c -o hdf5/H5Adeprec.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Adeprec.c
+mpicc -c -o hdf5/H5Atest.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Atest.c
 mpicc -c -o hdf5/H5ACmpio.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5ACmpio.c
+mpicc -c -o hdf5/H5B2dbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5B2dbg.c
 mpicc -c -o hdf5/H5Adense.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Adense.c
 hdf5/H5Adense.c: In function 'H5A__dense_fnd_cb':
 hdf5/H5Adense.c:331:27: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
   331 |         H5A_t *old_attr = *user_attr;
       |                           ^
-mpicc -c -o hdf5/H5B2dbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5B2dbg.c
-mpicc -c -o hdf5/H5B2cache.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5B2cache.c
-mpicc -c -o hdf5/H5B2hdr.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5B2hdr.c
 mpicc -c -o hdf5/H5A.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5A.c
 In file included from hdf5/H5A.c:25:
 hdf5/H5A.c: In function 'H5Aget_name_by_idx':
@@ -492,16 +490,14 @@ hdf5/include/H5private.h:1365:28: note: length computed here
 hdf5/H5A.c:888:26: note: in expansion of macro 'HDstrlen'
   888 |     ret_value = (ssize_t)HDstrlen(attr->shared->name);
       |                          ^~~~~~~~
-mpicc -c -o hdf5/H5B2.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5B2.c
-mpicc -c -o hdf5/H5B2stat.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5B2stat.c
+mpicc -c -o hdf5/H5B2hdr.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5B2hdr.c
+mpicc -c -o hdf5/H5B2cache.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5B2cache.c
 mpicc -c -o hdf5/H5AC.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5AC.c
 mpicc -c -o hdf5/H5B.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5B.c
-mpicc -c -o hdf5/H5CS.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5CS.c
-mpicc -c -o hdf5/H5Bdbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Bdbg.c
+mpicc -c -o hdf5/H5B2stat.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5B2stat.c
+mpicc -c -o hdf5/H5B2.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5B2.c
 mpicc -c -o hdf5/H5Bcache.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Bcache.c
 mpicc -c -o hdf5/H5B2test.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5B2test.c
-mpicc -c -o hdf5/H5B2leaf.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5B2leaf.c
-mpicc -c -o hdf5/H5Cdbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Cdbg.c
 mpicc -c -o hdf5/H5Aint.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Aint.c
 hdf5/H5Aint.c: In function 'H5A__create':
 hdf5/H5Aint.c:200:45: warning: passing argument 1 of 'H5T_copy' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
@@ -536,6 +532,10 @@ In file included from hdf5/include/H5Oprivate.h:45,
 hdf5/include/H5Tprivate.h:108:15: note: expected 'H5T_t *' {aka 'struct H5T_t *'} but argument is of type 'const H5T_t *' {aka 'const struct H5T_t *'}
   108 | H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
       |               ^~~~~~~~
+mpicc -c -o hdf5/H5Bdbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Bdbg.c
+mpicc -c -o hdf5/H5CS.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5CS.c
+mpicc -c -o hdf5/H5B2leaf.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5B2leaf.c
+mpicc -c -o hdf5/H5Cdbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Cdbg.c
 mpicc -c -o hdf5/H5B2internal.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5B2internal.c
 mpicc -c -o hdf5/H5Cepoch.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Cepoch.c
 mpicc -c -o hdf5/H5B2int.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5B2int.c
@@ -543,18 +543,18 @@ mpicc -c -o hdf5/H5Cprefetched.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include 
 mpicc -c -o hdf5/H5Clog.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Clog.c
 mpicc -c -o hdf5/H5Clog_trace.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Clog_trace.c
 mpicc -c -o hdf5/H5Cquery.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Cquery.c
-mpicc -c -o hdf5/H5Clog_json.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Clog_json.c
 mpicc -c -o hdf5/H5Ctest.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Ctest.c
+mpicc -c -o hdf5/H5Clog_json.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Clog_json.c
 mpicc -c -o hdf5/H5Ctag.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Ctag.c
 mpicc -c -o hdf5/H5Cmpio.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Cmpio.c
 mpicc -c -o hdf5/H5Ddbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Ddbg.c
 mpicc -c -o hdf5/H5Dcompact.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Dcompact.c
 mpicc -c -o hdf5/H5Dbtree.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Dbtree.c
 mpicc -c -o hdf5/H5Dbtree2.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Dbtree2.c
-mpicc -c -o hdf5/H5Ddeprec.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Ddeprec.c
-mpicc -c -o hdf5/H5CX.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5CX.c
 mpicc -c -o hdf5/H5Cimage.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Cimage.c
+mpicc -c -o hdf5/H5CX.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5CX.c
 mpicc -c -o hdf5/H5D.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5D.c
+mpicc -c -o hdf5/H5Ddeprec.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Ddeprec.c
 mpicc -c -o hdf5/H5Dcontig.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Dcontig.c
 mpicc -c -o hdf5/H5Defl.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Defl.c
 mpicc -c -o hdf5/H5Df.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Df.c
@@ -612,14 +612,15 @@ mpicc -c -o hdf5/H5Dselect.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DND
 mpicc -c -o hdf5/H5Dsingle.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Dsingle.c
 mpicc -c -o hdf5/H5Dtest.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Dtest.c
 mpicc -c -o hdf5/H5Dscatgath.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Dscatgath.c
+mpicc -c -o hdf5/H5EAdbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5EAdbg.c
 mpicc -c -o hdf5/H5C.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5C.c
 mpicc -c -o hdf5/H5EA.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5EA.c
-mpicc -c -o hdf5/H5EAdbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5EAdbg.c
 mpicc -c -o hdf5/H5EAdblkpage.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5EAdblkpage.c
 mpicc -c -o hdf5/H5EAdblock.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5EAdblock.c
 mpicc -c -o hdf5/H5EAint.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5EAint.c
-mpicc -c -o hdf5/H5EAiblock.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5EAiblock.c
+mpicc -c -o hdf5/H5EAcache.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5EAcache.c
 mpicc -c -o hdf5/H5EAhdr.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5EAhdr.c
+mpicc -c -o hdf5/H5EAiblock.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5EAiblock.c
 mpicc -c -o hdf5/H5Dint.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Dint.c
 hdf5/H5Dint.c: In function 'H5D__init_type':
 hdf5/H5Dint.c:508:43: warning: passing argument 1 of 'H5T_copy' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
@@ -632,11 +633,10 @@ In file included from hdf5/include/H5Oprivate.h:45,
 hdf5/include/H5Tprivate.h:108:15: note: expected 'H5T_t *' {aka 'struct H5T_t *'} but argument is of type 'const H5T_t *' {aka 'const struct H5T_t *'}
   108 | H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
       |               ^~~~~~~~
-mpicc -c -o hdf5/H5EAcache.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5EAcache.c
-mpicc -c -o hdf5/H5EAstat.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5EAstat.c
 mpicc -c -o hdf5/H5Dmpio.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Dmpio.c
-mpicc -c -o hdf5/H5EAsblock.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5EAsblock.c
+mpicc -c -o hdf5/H5EAstat.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5EAstat.c
 mpicc -c -o hdf5/H5Ef.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Ef.c
+mpicc -c -o hdf5/H5EAsblock.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5EAsblock.c
 mpicc -c -o hdf5/H5EAtest.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5EAtest.c
 mpicc -c -o hdf5/H5Edeprec.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Edeprec.c
 mpicc -c -o hdf5/H5Eint.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Eint.c
@@ -689,12 +689,12 @@ In file included from hdf5/include/H5Zprivate.h:28,
 hdf5/include/H5Tprivate.h:108:15: note: expected 'H5T_t *' {aka 'struct H5T_t *'} but argument is of type 'const H5T_t *' {aka 'const struct H5T_t *'}
   108 | H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
       |               ^~~~~~~~
-mpicc -c -o hdf5/H5FA.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FA.c
 mpicc -c -o hdf5/H5FAdbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FAdbg.c
+mpicc -c -o hdf5/H5FA.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FA.c
 mpicc -c -o hdf5/H5FAdblkpage.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FAdblkpage.c
-mpicc -c -o hdf5/H5FAcache.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FAcache.c
-mpicc -c -o hdf5/H5Dvirtual.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Dvirtual.c
 mpicc -c -o hdf5/H5FAdblock.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FAdblock.c
+mpicc -c -o hdf5/H5Dvirtual.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Dvirtual.c
+mpicc -c -o hdf5/H5FAcache.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FAcache.c
 mpicc -c -o hdf5/H5FAint.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FAint.c
 mpicc -c -o hdf5/H5FAstat.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FAstat.c
 mpicc -c -o hdf5/H5FAhdr.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FAhdr.c
@@ -724,10 +724,9 @@ hdf5/include/H5private.h:1365:28: note: length computed here
 hdf5/H5E.c:642:20: note: in expansion of macro 'HDstrlen'
   642 |     len = (ssize_t)HDstrlen(cls->cls_name);
       |                    ^~~~~~~~
-mpicc -c -o hdf5/H5FDmpi.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FDmpi.c
 mpicc -c -o hdf5/H5FDint.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FDint.c
+mpicc -c -o hdf5/H5FDmpi.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FDmpi.c
 mpicc -c -o hdf5/H5FDcore.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FDcore.c
-mpicc -c -o hdf5/H5FDfamily.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FDfamily.c
 mpicc -c -o hdf5/H5F.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5F.c
 In file included from hdf5/H5F.c:24:
 hdf5/H5F.c: In function 'H5Fget_name':
@@ -743,15 +742,16 @@ hdf5/include/H5private.h:1365:28: note: length computed here
 hdf5/H5F.c:1150:11: note: in expansion of macro 'HDstrlen'
  1150 |     len = HDstrlen(H5F_OPEN_NAME(f));
       |           ^~~~~~~~
+mpicc -c -o hdf5/H5FDfamily.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FDfamily.c
 mpicc -c -o hdf5/H5FDlog.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FDlog.c
-mpicc -c -o hdf5/H5FDspace.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FDspace.c
-mpicc -c -o hdf5/H5FDstdio.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FDstdio.c
-mpicc -c -o hdf5/H5FDtest.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FDtest.c
 mpicc -c -o hdf5/H5FDsec2.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FDsec2.c
+mpicc -c -o hdf5/H5FDspace.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FDspace.c
+mpicc -c -o hdf5/H5FDtest.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FDtest.c
+mpicc -c -o hdf5/H5FDstdio.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FDstdio.c
 mpicc -c -o hdf5/H5FDwindows.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FDwindows.c
 mpicc -c -o hdf5/H5FDmpio.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FDmpio.c
-mpicc -c -o hdf5/H5FSint.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FSint.c
 mpicc -c -o hdf5/H5FD.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FD.c
+mpicc -c -o hdf5/H5FSint.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FSint.c
 mpicc -c -o hdf5/H5FO.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FO.c
 mpicc -c -o hdf5/H5FSdbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FSdbg.c
 mpicc -c -o hdf5/H5FDmulti.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FDmulti.c
@@ -776,14 +776,14 @@ mpicc -c -o hdf5/H5Faccum.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDE
 mpicc -c -o hdf5/H5Fefc.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Fefc.c
 mpicc -c -o hdf5/H5Fio.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Fio.c
 mpicc -c -o hdf5/H5Fsfile.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Fsfile.c
-mpicc -c -o hdf5/H5Fspace.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Fspace.c
 mpicc -c -o hdf5/H5Fmpi.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Fmpi.c
+mpicc -c -o hdf5/H5Fspace.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Fspace.c
 mpicc -c -o hdf5/H5Fquery.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Fquery.c
-mpicc -c -o hdf5/H5FSsection.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FSsection.c
-mpicc -c -o hdf5/H5Ftest.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Ftest.c
 mpicc -c -o hdf5/H5Fmount.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Fmount.c
-mpicc -c -o hdf5/H5Gcache.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Gcache.c
+mpicc -c -o hdf5/H5Ftest.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Ftest.c
+mpicc -c -o hdf5/H5FSsection.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5FSsection.c
 mpicc -c -o hdf5/H5Fsuper_cache.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Fsuper_cache.c
+mpicc -c -o hdf5/H5Gcache.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Gcache.c
 mpicc -c -o hdf5/H5Gbtree2.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Gbtree2.c
 mpicc -c -o hdf5/H5Gcompact.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Gcompact.c
 In file included from hdf5/H5Gcompact.c:28:
@@ -803,8 +803,9 @@ hdf5/H5Gcompact.c:240:26: note: in expansion of macro 'HDstrlen'
 mpicc -c -o hdf5/H5G.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5G.c
 mpicc -c -o hdf5/H5Gf.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Gf.c
 mpicc -c -o hdf5/H5Gent.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Gent.c
-mpicc -c -o hdf5/H5Glink.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Glink.c
 mpicc -c -o hdf5/H5Fsuper.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Fsuper.c
+mpicc -c -o hdf5/H5Glink.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Glink.c
+mpicc -c -o hdf5/H5Gdeprec.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Gdeprec.c
 mpicc -c -o hdf5/H5Gdense.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Gdense.c
 In file included from hdf5/H5Gdense.c:35:
 hdf5/H5Gdense.c: In function 'H5G__dense_get_name_by_idx':
@@ -820,11 +821,10 @@ hdf5/include/H5private.h:1365:28: note: length computed here
 hdf5/H5Gdense.c:1251:30: note: in expansion of macro 'HDstrlen'
  1251 |         ret_value = (ssize_t)HDstrlen(ltable.lnks[n].name);
       |                              ^~~~~~~~
-mpicc -c -o hdf5/H5Gdeprec.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Gdeprec.c
 mpicc -c -o hdf5/H5Gint.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Gint.c
 mpicc -c -o hdf5/H5Gloc.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Gloc.c
-mpicc -c -o hdf5/H5Goh.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Goh.c
 mpicc -c -o hdf5/H5Groot.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Groot.c
+mpicc -c -o hdf5/H5Goh.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Goh.c
 mpicc -c -o hdf5/H5Gname.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Gname.c
 In file included from hdf5/H5Gname.c:35:
 hdf5/H5Gname.c: In function 'H5G_build_fullpath':
@@ -855,15 +855,15 @@ hdf5/include/H5private.h:1365:28: note: length computed here
 hdf5/H5Gstab.c:795:26: note: in expansion of macro 'HDstrlen'
   795 |     ret_value = (ssize_t)HDstrlen(udata.name);
       |                          ^~~~~~~~
-mpicc -c -o hdf5/H5HFdblock.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFdblock.c
-mpicc -c -o hdf5/H5HFbtree2.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFbtree2.c
-mpicc -c -o hdf5/H5HFdtable.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFdtable.c
 mpicc -c -o hdf5/H5HFdbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFdbg.c
+mpicc -c -o hdf5/H5HFbtree2.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFbtree2.c
+mpicc -c -o hdf5/H5HFdblock.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFdblock.c
+mpicc -c -o hdf5/H5HFdtable.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFdtable.c
 mpicc -c -o hdf5/H5HFiter.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFiter.c
 mpicc -c -o hdf5/H5HFstat.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFstat.c
+mpicc -c -o hdf5/H5HFtest.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFtest.c
 mpicc -c -o hdf5/H5HFspace.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFspace.c
 mpicc -c -o hdf5/H5HFman.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFman.c
-mpicc -c -o hdf5/H5HFtest.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFtest.c
 mpicc -c -o hdf5/H5HFhdr.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFhdr.c
 mpicc -c -o hdf5/H5HFtiny.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFtiny.c
 mpicc -c -o hdf5/H5HFcache.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFcache.c
@@ -876,25 +876,25 @@ hdf5/H5HFcache.c:1362:12: warning: assignment discards 'const' qualifier from po
  1362 |     hdr->f = f;
       |            ^
 mpicc -c -o hdf5/H5HFhuge.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFhuge.c
-mpicc -c -o hdf5/H5HGquery.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HGquery.c
 mpicc -c -o hdf5/H5HGdbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HGdbg.c
+mpicc -c -o hdf5/H5HGquery.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HGquery.c
 mpicc -c -o hdf5/H5HGcache.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HGcache.c
 mpicc -c -o hdf5/H5HFiblock.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFiblock.c
-mpicc -c -o hdf5/H5HLint.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HLint.c
 mpicc -c -o hdf5/H5HLdbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HLdbg.c
 mpicc -c -o hdf5/H5HLdblk.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HLdblk.c
 mpicc -c -o hdf5/H5HG.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HG.c
 mpicc -c -o hdf5/H5HLprfx.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HLprfx.c
+mpicc -c -o hdf5/H5HLint.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HLint.c
 mpicc -c -o hdf5/H5lib_settings.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5lib_settings.c
-mpicc -c -o hdf5/H5HLcache.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HLcache.c
-mpicc -c -o hdf5/H5HL.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HL.c
 mpicc -c -o hdf5/H5HP.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HP.c
-mpicc -c -o hdf5/H5Itest.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Itest.c
+mpicc -c -o hdf5/H5HL.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HL.c
+mpicc -c -o hdf5/H5HLcache.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HLcache.c
 mpicc -c -o hdf5/H5If.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5If.c
+mpicc -c -o hdf5/H5Itest.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Itest.c
 mpicc -c -o hdf5/H5HFsection.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5HFsection.c
 mpicc -c -o hdf5/H5Lf.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Lf.c
-mpicc -c -o hdf5/H5Lexternal.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Lexternal.c
 mpicc -c -o hdf5/H5MM.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5MM.c
+mpicc -c -o hdf5/H5Lexternal.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Lexternal.c
 mpicc -c -o hdf5/H5MFdbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5MFdbg.c
 mpicc -c -o hdf5/H5MFsection.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5MFsection.c
 mpicc -c -o hdf5/H5MFaggr.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5MFaggr.c
@@ -910,24 +910,23 @@ mpicc -c -o hdf5/H5Ocont.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEB
 mpicc -c -o hdf5/H5Ochunk.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Ochunk.c
 mpicc -c -o hdf5/H5O.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5O.c
 mpicc -c -o hdf5/H5Ocache.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Ocache.c
-mpicc -c -o hdf5/H5Odrvinfo.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Odrvinfo.c
 mpicc -c -o hdf5/H5Oattribute.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Oattribute.c
+mpicc -c -o hdf5/H5Odrvinfo.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Odrvinfo.c
 mpicc -c -o hdf5/H5MF.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5MF.c
 mpicc -c -o hdf5/H5L.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5L.c
 mpicc -c -o hdf5/H5Odbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Odbg.c
-mpicc -c -o hdf5/H5Oefl.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Oefl.c
 mpicc -c -o hdf5/H5Oalloc.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Oalloc.c
+mpicc -c -o hdf5/H5Oefl.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Oefl.c
 mpicc -c -o hdf5/H5Of.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Of.c
 mpicc -c -o hdf5/H5Oginfo.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Oginfo.c
 mpicc -c -o hdf5/H5Oflush.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Oflush.c
 mpicc -c -o hdf5/H5Ofsinfo.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Ofsinfo.c
 mpicc -c -o hdf5/H5Ocopy.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Ocopy.c
 mpicc -c -o hdf5/H5Olinfo.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Olinfo.c
-mpicc -c -o hdf5/H5Oname.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Oname.c
 mpicc -c -o hdf5/H5Ofill.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Ofill.c
+mpicc -c -o hdf5/H5Oname.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Oname.c
 mpicc -c -o hdf5/H5Omtime.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Omtime.c
 mpicc -c -o hdf5/H5Olink.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Olink.c
-mpicc -c -o hdf5/H5Onull.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Onull.c
 mpicc -c -o hdf5/H5Odtype.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Odtype.c
 hdf5/H5Odtype.c: In function 'H5O_dtype_copy':
 hdf5/H5Odtype.c:1190:32: warning: passing argument 1 of 'H5T_copy' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
@@ -949,18 +948,19 @@ In file included from hdf5/include/H5Oprivate.h:45,
 hdf5/include/H5Tprivate.h:108:15: note: expected 'H5T_t *' {aka 'struct H5T_t *'} but argument is of type 'const H5T_t *' {aka 'const struct H5T_t *'}
   108 | H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
       |               ^~~~~~~~
+mpicc -c -o hdf5/H5Onull.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Onull.c
 mpicc -c -o hdf5/H5Orefcount.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Orefcount.c
 mpicc -c -o hdf5/H5Oshmesg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Oshmesg.c
 mpicc -c -o hdf5/H5Oshared.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Oshared.c
 mpicc -c -o hdf5/H5Olayout.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Olayout.c
-mpicc -c -o hdf5/H5Osdspace.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Osdspace.c
 mpicc -c -o hdf5/H5Ostab.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Ostab.c
 mpicc -c -o hdf5/H5Ounknown.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Ounknown.c
-mpicc -c -o hdf5/H5Oint.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Oint.c
+mpicc -c -o hdf5/H5Osdspace.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Osdspace.c
 mpicc -c -o hdf5/H5Opline.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Opline.c
-mpicc -c -o hdf5/H5Pacpl.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Pacpl.c
+mpicc -c -o hdf5/H5Oint.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Oint.c
 mpicc -c -o hdf5/H5PLplugin_cache.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5PLplugin_cache.c
 mpicc -c -o hdf5/H5Omessage.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Omessage.c
+mpicc -c -o hdf5/H5Pacpl.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Pacpl.c
 mpicc -c -o hdf5/H5Otest.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Otest.c
 mpicc -c -o hdf5/H5PLint.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5PLint.c
 mpicc -c -o hdf5/H5PL.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5PL.c
@@ -980,7 +980,6 @@ hdf5/H5PL.c:369:16: note: in expansion of macro 'HDstrlen'
       |                ^~~~~~~~
 mpicc -c -o hdf5/H5PLpath.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5PLpath.c
 mpicc -c -o hdf5/H5Pdeprec.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Pdeprec.c
-mpicc -c -o hdf5/H5PB.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5PB.c
 mpicc -c -o hdf5/H5Pencdec.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Pencdec.c
 In file included from hdf5/H5Pencdec.c:29:
 In function 'H5P__encode_cb',
@@ -998,6 +997,7 @@ hdf5/include/H5private.h:1365:28: note: length computed here
 hdf5/H5Pencdec.c:351:25: note: in expansion of macro 'HDstrlen'
   351 |         prop_name_len = HDstrlen(prop->name) + 1;
       |                         ^~~~~~~~
+mpicc -c -o hdf5/H5PB.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5PB.c
 mpicc -c -o hdf5/H5P.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5P.c
 mpicc -c -o hdf5/H5Pfmpl.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Pfmpl.c
 mpicc -c -o hdf5/H5Pdapl.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Pdapl.c
@@ -1083,6 +1083,8 @@ hdf5/include/H5private.h:1365:28: note: length computed here
 hdf5/H5Pdxpl.c:1017:11: note: in expansion of macro 'HDstrlen'
  1017 |     len = HDstrlen(pexp);
       |           ^~~~~~~~
+mpicc -c -o hdf5/H5Pstrcpl.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Pstrcpl.c
+mpicc -c -o hdf5/H5Ptest.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Ptest.c
 mpicc -c -o hdf5/H5Plapl.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Plapl.c
 In file included from hdf5/H5Plapl.c:35:
 hdf5/H5Plapl.c: In function 'H5Pget_elink_prefix':
@@ -1098,8 +1100,6 @@ hdf5/include/H5private.h:1365:28: note: length computed here
 hdf5/H5Plapl.c:1061:15: note: in expansion of macro 'HDstrlen'
  1061 |         len = HDstrlen(my_prefix);
       |               ^~~~~~~~
-mpicc -c -o hdf5/H5Pstrcpl.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Pstrcpl.c
-mpicc -c -o hdf5/H5Ptest.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Ptest.c
 mpicc -c -o hdf5/H5Pfcpl.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Pfcpl.c
 mpicc -c -o hdf5/H5Pocpypl.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Pocpypl.c
 hdf5/H5Pocpypl.c: In function 'H5P__ocpy_reg_prop':
@@ -1115,13 +1115,13 @@ In file included from hdf5/H5Pocpypl.c:41:
 hdf5/include/H5Ppkg.h:141:27: note: expected 'H5P_prp_encode_func_t' {aka 'int (*)(const void *, void **, long unsigned int *, void *)'} but argument is of type 'herr_t (*)(const void *, void **, size_t *)' {aka 'int (*)(const void *, void **, long unsigned int *)'}
   141 |     H5P_prp_encode_func_t prp_encode, H5P_prp_decode_func_t prp_decode,
       |     ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
-mpicc -c -o hdf5/H5R.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5R.c
 mpicc -c -o hdf5/H5RS.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5RS.c
 mpicc -c -o hdf5/H5Rf.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Rf.c
 mpicc -c -o hdf5/H5Rdeprec.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Rdeprec.c
+mpicc -c -o hdf5/H5R.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5R.c
 mpicc -c -o hdf5/H5Rint.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Rint.c
-mpicc -c -o hdf5/H5Pocpl.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Pocpl.c
 mpicc -c -o hdf5/H5SMbtree2.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5SMbtree2.c
+mpicc -c -o hdf5/H5Pocpl.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Pocpl.c
 mpicc -c -o hdf5/H5SMcache.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5SMcache.c
 mpicc -c -o hdf5/H5SMmessage.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5SMmessage.c
 mpicc -c -o hdf5/H5SMtest.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5SMtest.c
@@ -1136,11 +1136,11 @@ In file included from hdf5/include/H5Zprivate.h:28,
 hdf5/include/H5Tprivate.h:108:15: note: expected 'H5T_t *' {aka 'struct H5T_t *'} but argument is of type 'const H5T_t *' {aka 'const struct H5T_t *'}
   108 | H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
       |               ^~~~~~~~
-mpicc -c -o hdf5/H5Pint.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Pint.c
 mpicc -c -o hdf5/H5Sdbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Sdbg.c
+mpicc -c -o hdf5/H5Pint.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Pint.c
 mpicc -c -o hdf5/H5Sall.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Sall.c
-mpicc -c -o hdf5/H5Sf.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Sf.c
 mpicc -c -o hdf5/H5Snone.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Snone.c
+mpicc -c -o hdf5/H5Sf.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Sf.c
 mpicc -c -o hdf5/H5ST.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5ST.c
 mpicc -c -o hdf5/H5S.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5S.c
 mpicc -c -o hdf5/H5Pfapl.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Pfapl.c
@@ -1187,13 +1187,12 @@ In file included from hdf5/include/H5Zprivate.h:28,
 hdf5/include/H5Tprivate.h:108:15: note: expected 'H5T_t *' {aka 'struct H5T_t *'} but argument is of type 'const H5T_t *' {aka 'const struct H5T_t *'}
   108 | H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
       |               ^~~~~~~~
-mpicc -c -o hdf5/H5Sselect.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Sselect.c
 mpicc -c -o hdf5/H5Tcset.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Tcset.c
+mpicc -c -o hdf5/H5Sselect.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Sselect.c
 mpicc -c -o hdf5/H5Tcommit.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Tcommit.c
 mpicc -c -o hdf5/H5Tdbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Tdbg.c
 mpicc -c -o hdf5/H5Tdeprec.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Tdeprec.c
 mpicc -c -o hdf5/H5Tfixed.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Tfixed.c
-mpicc -c -o hdf5/H5Tfields.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Tfields.c
 mpicc -c -o hdf5/H5Tenum.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Tenum.c
 hdf5/H5Tenum.c: In function 'H5T__enum_create':
 hdf5/H5Tenum.c:111:42: warning: passing argument 1 of 'H5T_copy' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
@@ -1222,17 +1221,18 @@ In file included from hdf5/include/H5Tpkg.h:37,
 hdf5/include/H5Tprivate.h:108:15: note: expected 'H5T_t *' {aka 'struct H5T_t *'} but argument is of type 'const H5T_t *' {aka 'const struct H5T_t *'}
   108 | H5_DLL H5T_t *H5T_copy(H5T_t *old_dt, H5T_copy_t method);
       |               ^~~~~~~~
+mpicc -c -o hdf5/H5Tfields.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Tfields.c
 mpicc -c -o hdf5/H5Tf.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Tf.c
 mpicc -c -o hdf5/H5Tfloat.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Tfloat.c
 mpicc -c -o hdf5/H5Tinit.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Tinit.c
 mpicc -c -o hdf5/H5Toh.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Toh.c
-mpicc -c -o hdf5/H5Toffset.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Toffset.c
 mpicc -c -o hdf5/H5Topaque.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Topaque.c
+mpicc -c -o hdf5/H5Toffset.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Toffset.c
 mpicc -c -o hdf5/H5Torder.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Torder.c
 mpicc -c -o hdf5/H5Tpad.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Tpad.c
 mpicc -c -o hdf5/H5Tnative.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Tnative.c
-mpicc -c -o hdf5/H5Tstrpad.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Tstrpad.c
 mpicc -c -o hdf5/H5Tvisit.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Tvisit.c
+mpicc -c -o hdf5/H5Tstrpad.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Tstrpad.c
 mpicc -c -o hdf5/H5Tprecis.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Tprecis.c
 mpicc -c -o hdf5/H5UC.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5UC.c
 mpicc -c -o hdf5/H5WB.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5WB.c
@@ -1269,8 +1269,8 @@ hdf5/H5T.c:4683:42: warning: passing argument 1 of 'H5T_copy' discards 'const' q
 hdf5/H5T.c:3213:17: note: expected 'H5T_t *' {aka 'struct H5T_t *'} but argument is of type 'const H5T_t *' {aka 'const struct H5T_t *'}
  3213 | H5T_copy(H5T_t *old_dt, H5T_copy_t method)
       |          ~~~~~~~^~~~~~
-mpicc -c -o hdf5/H5dbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5dbg.c
 mpicc -c -o hdf5/H5Znbit.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Znbit.c
+mpicc -c -o hdf5/H5dbg.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5dbg.c
 mpicc -c -o hdf5/H5f90kit.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5f90kit.c
 mpicc -c -o hdf5/H5timer.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5timer.c
 mpicc -c -o hdf5/H5DO.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5DO.c
@@ -1299,22 +1299,22 @@ mpicc -c -o hdf5/H5PT.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG 
 mpicc -c -o hdf5/H5DSfc.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5DSfc.c
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG -Ihdf5 -Ihdf5/include -DNDEBUG hdf5/H5IMff.F90 -o hdf5/H5IMff.fppized.f90
 mpicc -c -o hdf5/H5IMcc.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5IMcc.c
-mpicc -c -o hdf5/H5Shyper.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Shyper.c
 mpicc -c -o hdf5/H5IMfc.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5IMfc.c
+mpicc -c -o hdf5/H5Shyper.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Shyper.c
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG -Ihdf5 -Ihdf5/include -DNDEBUG hdf5/H5LTff.F90 -o hdf5/H5LTff.fppized.f90
 /lustre/SPEChpc/bin/specperl /lustre/SPEChpc/bin/harness/specpp -DSPEC_OPENMP -DSPEC -DNDEBUG -Ihdf5 -Ihdf5/include -DNDEBUG hdf5/H5TBff.F90 -o hdf5/H5TBff.fppized.f90
 mpicc -c -o hdf5/H5LT.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5LT.c
 mpicc -c -o hdf5/H5trace.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5trace.c
-mpicc -c -o hdf5/H5LTfc.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5LTfc.c
 mpicc -c -o libz/adler32.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        libz/adler32.c
-mpicc -c -o hdf5/H5TBfc.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5TBfc.c
+mpicc -c -o hdf5/H5LTfc.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5LTfc.c
 mpicc -c -o libz/crc32.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        libz/crc32.c
 mpicc -c -o hdf5/H5Zscaleoffset.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5Zscaleoffset.c
+mpicc -c -o hdf5/H5TBfc.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5TBfc.c
 mpicc -c -o libz/zutil.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        libz/zutil.c
 mpicc -c -o libz/inffast.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        libz/inffast.c
-mpicc -c -o libz/inftrees.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        libz/inftrees.c
 mpicc -c -o hdf5/H5TB.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        hdf5/H5TB.c
 mpicc -c -o libz/infback.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        libz/infback.c
+mpicc -c -o libz/inftrees.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        libz/inftrees.c
 mpicc -c -o libz/compress.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        libz/compress.c
 mpicc -c -o libz/uncompr.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        libz/uncompr.c
 mpicc -c -o libz/gzclose.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        libz/gzclose.c
@@ -1322,17 +1322,17 @@ mpif90 -c -o number_types.fppized.o -Ofast -fopenmp -fno-stack-arrays number_typ
 mpif90 -c -o hdf5/H5fortran_types.fppized.o -Ofast -fopenmp -fno-stack-arrays hdf5/H5fortran_types.fppized.f90
 mpif90 -c -o hdf5/H5fortkit.fppized.o -Ofast -fopenmp -fno-stack-arrays hdf5/H5fortkit.fppized.f90
 mpicc -c -o libz/gzlib.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        libz/gzlib.c
+mpicc -c -o libz/gzread.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        libz/gzread.c
 mpicc -c -o libz/trees.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        libz/trees.c
 mpif90 -c -o hdf5/H5f90global.fppized.o -Ofast -fopenmp -fno-stack-arrays hdf5/H5f90global.fppized.f90
-mpicc -c -o libz/gzread.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        libz/gzread.c
 mpicc -c -o libz/gzwrite.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        libz/gzwrite.c
 mpif90 -c -o hdf5/H5Eff.fppized.o -Ofast -fopenmp -fno-stack-arrays hdf5/H5Eff.fppized.f90
-mpif90 -c -o hdf5/H5Fff.fppized.o -Ofast -fopenmp -fno-stack-arrays hdf5/H5Fff.fppized.f90
 mpif90 -c -o hdf5/H5Iff.fppized.o -Ofast -fopenmp -fno-stack-arrays hdf5/H5Iff.fppized.f90
+mpif90 -c -o hdf5/H5Fff.fppized.o -Ofast -fopenmp -fno-stack-arrays hdf5/H5Fff.fppized.f90
 mpif90 -c -o hdf5/H5Gff.fppized.o -Ofast -fopenmp -fno-stack-arrays hdf5/H5Gff.fppized.f90
 mpicc -c -o libz/inflate.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        libz/inflate.c
-mpif90 -c -o hdf5/H5Aff.fppized.o -Ofast -fopenmp -fno-stack-arrays hdf5/H5Aff.fppized.f90
 mpicc -c -o libz/deflate.o -DSPEC -DNDEBUG  -Ihdf5/include -Ilibz/include -DNDEBUG  -Ofast -fopenmp         -lm  -DSPEC_OPENMP        libz/deflate.c
+mpif90 -c -o hdf5/H5Aff.fppized.o -Ofast -fopenmp -fno-stack-arrays hdf5/H5Aff.fppized.f90
 mpif90 -c -o hdf5/H5Lff.fppized.o -Ofast -fopenmp -fno-stack-arrays hdf5/H5Lff.fppized.f90
 mpif90 -c -o hdf5/H5Dff.fppized.o -Ofast -fopenmp -fno-stack-arrays hdf5/H5Dff.fppized.f90
 mpif90 -c -o hdf5/H5Rff.fppized.o -Ofast -fopenmp -fno-stack-arrays hdf5/H5Rff.fppized.f90
@@ -1400,7 +1400,7 @@ Copyright (C) 2019 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-  Building 532.sph_exa_t base aws_omp: (build_base_aws_omp.0000) [2022-08-12 23:38:07]
+  Building 532.sph_exa_t base aws_omp: (build_base_aws_omp.0000) [2022-08-13 00:34:46]
 specmake --output-sync -j 10 clean
 rm -rf *.o  sqpatch.dat
 find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
@@ -1440,7 +1440,7 @@ Copyright (C) 2019 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-  Building 534.hpgmgfv_t base aws_omp: (build_base_aws_omp.0000) [2022-08-12 23:38:12]
+  Building 534.hpgmgfv_t base aws_omp: (build_base_aws_omp.0000) [2022-08-13 00:34:50]
 specmake --output-sync -j 10 clean
 rm -rf *.o  hpgmgfv.out
 find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
@@ -1490,7 +1490,7 @@ Copyright (C) 2019 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-  Building 535.weather_t base aws_omp: (build_base_aws_omp.0000) [2022-08-12 23:38:15]
+  Building 535.weather_t base aws_omp: (build_base_aws_omp.0000) [2022-08-13 00:34:54]
 specmake --output-sync -j 10 clean
 rm -rf *.o  output6.train.txt
 find . \( -name \*.o -o -name '*.fppized.f*' -o -name '*.i' -o -name '*.mod' \) -print | xargs rm -rf
@@ -1549,76 +1549,76 @@ Build successes for tiny: 505.lbm_t(base), 513.soma_t(base), 518.tealeaf_t(base)
 Build errors for tiny: None
 
 Setting Up Run Directories
-  Setting up 505.lbm_t ref base aws_omp: run_base_ref_aws_omp.0001
-  Setting up 513.soma_t ref base aws_omp: run_base_ref_aws_omp.0001
-  Setting up 518.tealeaf_t ref base aws_omp: run_base_ref_aws_omp.0001
-  Setting up 519.clvleaf_t ref base aws_omp: run_base_ref_aws_omp.0001
-  Setting up 521.miniswp_t ref base aws_omp: run_base_ref_aws_omp.0001
-  Setting up 528.pot3d_t ref base aws_omp: run_base_ref_aws_omp.0001
-  Setting up 532.sph_exa_t ref base aws_omp: run_base_ref_aws_omp.0001
-  Setting up 534.hpgmgfv_t ref base aws_omp: run_base_ref_aws_omp.0001
-  Setting up 535.weather_t ref base aws_omp: run_base_ref_aws_omp.0001
+  Setting up 505.lbm_t ref base aws_omp: run_base_ref_aws_omp.0000
+  Setting up 513.soma_t ref base aws_omp: run_base_ref_aws_omp.0000
+  Setting up 518.tealeaf_t ref base aws_omp: run_base_ref_aws_omp.0000
+  Setting up 519.clvleaf_t ref base aws_omp: run_base_ref_aws_omp.0000
+  Setting up 521.miniswp_t ref base aws_omp: run_base_ref_aws_omp.0000
+  Setting up 528.pot3d_t ref base aws_omp: run_base_ref_aws_omp.0000
+  Setting up 532.sph_exa_t ref base aws_omp: run_base_ref_aws_omp.0000
+  Setting up 534.hpgmgfv_t ref base aws_omp: run_base_ref_aws_omp.0000
+  Setting up 535.weather_t ref base aws_omp: run_base_ref_aws_omp.0000
 Running Benchmarks
-  Running (#1) 505.lbm_t ref base aws_omp threads:64 [2022-08-12 23:38:18]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/505.lbm_t/run/run_base_ref_aws_omp.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/505.lbm_t/run/run_base_ref_aws_omp.0001 -f compare.cmd -E -e compare.err -o compare.stdout
-  Running (#1) 513.soma_t ref base aws_omp threads:64 [2022-08-12 23:40:13]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/513.soma_t/run/run_base_ref_aws_omp.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/513.soma_t/run/run_base_ref_aws_omp.0001 -f compare.cmd -E -e compare.err -o compare.stdout
-  Running (#1) 518.tealeaf_t ref base aws_omp threads:64 [2022-08-12 23:43:39]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/518.tealeaf_t/run/run_base_ref_aws_omp.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/518.tealeaf_t/run/run_base_ref_aws_omp.0001 -f compare.cmd -E -e compare.err -o compare.stdout
-  Running (#1) 519.clvleaf_t ref base aws_omp threads:64 [2022-08-12 23:47:04]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/519.clvleaf_t/run/run_base_ref_aws_omp.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/519.clvleaf_t/run/run_base_ref_aws_omp.0001 -f compare.cmd -E -e compare.err -o compare.stdout
-  Running (#1) 521.miniswp_t ref base aws_omp threads:64 [2022-08-12 23:49:34]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/521.miniswp_t/run/run_base_ref_aws_omp.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/521.miniswp_t/run/run_base_ref_aws_omp.0001 -f compare.cmd -E -e compare.err -o compare.stdout
-  Running (#1) 528.pot3d_t ref base aws_omp threads:64 [2022-08-12 23:52:18]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/528.pot3d_t/run/run_base_ref_aws_omp.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/528.pot3d_t/run/run_base_ref_aws_omp.0001 -f compare.cmd -E -e compare.err -o compare.stdout
-  Running (#1) 532.sph_exa_t ref base aws_omp threads:64 [2022-08-12 23:56:31]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/532.sph_exa_t/run/run_base_ref_aws_omp.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/532.sph_exa_t/run/run_base_ref_aws_omp.0001 -f compare.cmd -E -e compare.err -o compare.stdout
-  Running (#1) 534.hpgmgfv_t ref base aws_omp threads:64 [2022-08-12 23:59:36]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/534.hpgmgfv_t/run/run_base_ref_aws_omp.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/534.hpgmgfv_t/run/run_base_ref_aws_omp.0001 -f compare.cmd -E -e compare.err -o compare.stdout
-  Running (#1) 535.weather_t ref base aws_omp threads:64 [2022-08-13 00:02:59]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/535.weather_t/run/run_base_ref_aws_omp.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/535.weather_t/run/run_base_ref_aws_omp.0001 -f compare.cmd -E -e compare.err -o compare.stdout
-  Running (#2) 505.lbm_t ref base aws_omp threads:64 [2022-08-13 00:05:53]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/505.lbm_t/run/run_base_ref_aws_omp.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/505.lbm_t/run/run_base_ref_aws_omp.0001 -f compare.cmd -E -e compare.err -o compare.stdout
-  Running (#2) 513.soma_t ref base aws_omp threads:64 [2022-08-13 00:07:47]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/513.soma_t/run/run_base_ref_aws_omp.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/513.soma_t/run/run_base_ref_aws_omp.0001 -f compare.cmd -E -e compare.err -o compare.stdout
-  Running (#2) 518.tealeaf_t ref base aws_omp threads:64 [2022-08-13 00:11:14]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/518.tealeaf_t/run/run_base_ref_aws_omp.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/518.tealeaf_t/run/run_base_ref_aws_omp.0001 -f compare.cmd -E -e compare.err -o compare.stdout
-  Running (#2) 519.clvleaf_t ref base aws_omp threads:64 [2022-08-13 00:15:00]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/519.clvleaf_t/run/run_base_ref_aws_omp.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/519.clvleaf_t/run/run_base_ref_aws_omp.0001 -f compare.cmd -E -e compare.err -o compare.stdout
-  Running (#2) 521.miniswp_t ref base aws_omp threads:64 [2022-08-13 00:17:30]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/521.miniswp_t/run/run_base_ref_aws_omp.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/521.miniswp_t/run/run_base_ref_aws_omp.0001 -f compare.cmd -E -e compare.err -o compare.stdout
-  Running (#2) 528.pot3d_t ref base aws_omp threads:64 [2022-08-13 00:20:14]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/528.pot3d_t/run/run_base_ref_aws_omp.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/528.pot3d_t/run/run_base_ref_aws_omp.0001 -f compare.cmd -E -e compare.err -o compare.stdout
-  Running (#2) 532.sph_exa_t ref base aws_omp threads:64 [2022-08-13 00:24:27]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/532.sph_exa_t/run/run_base_ref_aws_omp.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/532.sph_exa_t/run/run_base_ref_aws_omp.0001 -f compare.cmd -E -e compare.err -o compare.stdout
-  Running (#2) 534.hpgmgfv_t ref base aws_omp threads:64 [2022-08-13 00:27:31]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/534.hpgmgfv_t/run/run_base_ref_aws_omp.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/534.hpgmgfv_t/run/run_base_ref_aws_omp.0001 -f compare.cmd -E -e compare.err -o compare.stdout
-  Running (#2) 535.weather_t ref base aws_omp threads:64 [2022-08-13 00:31:03]
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/535.weather_t/run/run_base_ref_aws_omp.0001 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
-/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/benchspec/HPC/535.weather_t/run/run_base_ref_aws_omp.0001 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#1) 505.lbm_t ref base aws_omp threads:8 [2022-08-13 00:34:57]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/505.lbm_t/run/run_base_ref_aws_omp.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/505.lbm_t/run/run_base_ref_aws_omp.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#1) 513.soma_t ref base aws_omp threads:8 [2022-08-13 00:36:52]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/513.soma_t/run/run_base_ref_aws_omp.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/513.soma_t/run/run_base_ref_aws_omp.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#1) 518.tealeaf_t ref base aws_omp threads:8 [2022-08-13 00:40:21]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/518.tealeaf_t/run/run_base_ref_aws_omp.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/518.tealeaf_t/run/run_base_ref_aws_omp.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#1) 519.clvleaf_t ref base aws_omp threads:8 [2022-08-13 00:43:53]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/519.clvleaf_t/run/run_base_ref_aws_omp.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/519.clvleaf_t/run/run_base_ref_aws_omp.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#1) 521.miniswp_t ref base aws_omp threads:8 [2022-08-13 00:46:23]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/521.miniswp_t/run/run_base_ref_aws_omp.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/521.miniswp_t/run/run_base_ref_aws_omp.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#1) 528.pot3d_t ref base aws_omp threads:8 [2022-08-13 00:48:41]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/528.pot3d_t/run/run_base_ref_aws_omp.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/528.pot3d_t/run/run_base_ref_aws_omp.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#1) 532.sph_exa_t ref base aws_omp threads:8 [2022-08-13 00:53:20]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/532.sph_exa_t/run/run_base_ref_aws_omp.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/532.sph_exa_t/run/run_base_ref_aws_omp.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#1) 534.hpgmgfv_t ref base aws_omp threads:8 [2022-08-13 00:56:21]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/534.hpgmgfv_t/run/run_base_ref_aws_omp.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/534.hpgmgfv_t/run/run_base_ref_aws_omp.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#1) 535.weather_t ref base aws_omp threads:8 [2022-08-13 00:59:00]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/535.weather_t/run/run_base_ref_aws_omp.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/535.weather_t/run/run_base_ref_aws_omp.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#2) 505.lbm_t ref base aws_omp threads:8 [2022-08-13 01:01:16]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/505.lbm_t/run/run_base_ref_aws_omp.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/505.lbm_t/run/run_base_ref_aws_omp.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#2) 513.soma_t ref base aws_omp threads:8 [2022-08-13 01:03:08]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/513.soma_t/run/run_base_ref_aws_omp.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/513.soma_t/run/run_base_ref_aws_omp.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#2) 518.tealeaf_t ref base aws_omp threads:8 [2022-08-13 01:06:35]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/518.tealeaf_t/run/run_base_ref_aws_omp.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/518.tealeaf_t/run/run_base_ref_aws_omp.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#2) 519.clvleaf_t ref base aws_omp threads:8 [2022-08-13 01:10:17]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/519.clvleaf_t/run/run_base_ref_aws_omp.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/519.clvleaf_t/run/run_base_ref_aws_omp.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#2) 521.miniswp_t ref base aws_omp threads:8 [2022-08-13 01:12:57]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/521.miniswp_t/run/run_base_ref_aws_omp.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/521.miniswp_t/run/run_base_ref_aws_omp.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#2) 528.pot3d_t ref base aws_omp threads:8 [2022-08-13 01:15:17]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/528.pot3d_t/run/run_base_ref_aws_omp.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/528.pot3d_t/run/run_base_ref_aws_omp.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#2) 532.sph_exa_t ref base aws_omp threads:8 [2022-08-13 01:19:31]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/532.sph_exa_t/run/run_base_ref_aws_omp.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/532.sph_exa_t/run/run_base_ref_aws_omp.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#2) 534.hpgmgfv_t ref base aws_omp threads:8 [2022-08-13 01:22:09]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/534.hpgmgfv_t/run/run_base_ref_aws_omp.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/534.hpgmgfv_t/run/run_base_ref_aws_omp.0000 -f compare.cmd -E -e compare.err -o compare.stdout
+  Running (#2) 535.weather_t ref base aws_omp threads:8 [2022-08-13 01:24:55]
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/535.weather_t/run/run_base_ref_aws_omp.0000 -f speccmds.cmd -q -e speccmds.err -o speccmds.stdout
+/lustre/SPEChpc/bin/specinvoke -d /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/benchspec/HPC/535.weather_t/run/run_base_ref_aws_omp.0000 -f compare.cmd -E -e compare.err -o compare.stdout
 Success: 2x505.lbm_t 2x513.soma_t 2x518.tealeaf_t 2x519.clvleaf_t 2x521.miniswp_t 2x528.pot3d_t 2x532.sph_exa_t 2x534.hpgmgfv_t 2x535.weather_t
 Producing Raw Reports
  label: aws_omp
   workload: ref
    metric: SPEChpc2021_tny_base
-    format: raw -> /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/result/hpc2021_tny.002.tiny.rsf
+    format: raw -> /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/result/hpc2021_tny.001.tiny.rsf
 Parsing flags for 505.lbm_t base: done
 Parsing flags for 513.soma_t base: done
 Parsing flags for 518.tealeaf_t base: done
@@ -1629,14 +1629,14 @@ Parsing flags for 532.sph_exa_t base: done
 Parsing flags for 534.hpgmgfv_t base: done
 Parsing flags for 535.weather_t base: done
 Doing flag reduction: done
-    format: flags -> /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/result/hpc2021_tny.002.tiny.flags.html
-    format: cfg -> /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/result/hpc2021_tny.002.tiny.cfg, /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/result/hpc2021_tny.002.tiny.orig.cfg
-    format: CSV -> /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/result/hpc2021_tny.002.tiny.csv
-    format: PDF -> /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/result/hpc2021_tny.002.tiny.pdf
-    format: HTML -> /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/result/hpc2021_tny.002.tiny.html, /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/result/invalid.gif
-    format: PostScript -> /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/result/hpc2021_tny.002.tiny.ps
-    format: Text -> /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/result/hpc2021_tny.002.tiny.txt
+    format: flags -> /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/result/hpc2021_tny.001.tiny.flags.html
+    format: cfg -> /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/result/hpc2021_tny.001.tiny.cfg, /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/result/hpc2021_tny.001.tiny.orig.cfg
+    format: CSV -> /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/result/hpc2021_tny.001.tiny.csv
+    format: PDF -> /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/result/hpc2021_tny.001.tiny.pdf
+    format: HTML -> /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/result/hpc2021_tny.001.tiny.html, /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/result/invalid.gif
+    format: PostScript -> /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/result/hpc2021_tny.001.tiny.ps
+    format: Text -> /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/result/hpc2021_tny.001.tiny.txt
 
-The log for this run is in /home/sam/g3_spec_results/tiny/tiny_gnu9_4_64/result/hpc2021.002.log
+The log for this run is in /home/sam/g3_spec_results/tiny/tiny_gnu9_32_8/result/hpc2021.001.log
 
-runhpc finished at 2022-08-13 00:34:00; 3403 total seconds elapsed
+runhpc finished at 2022-08-13 01:27:14; 3191 total seconds elapsed
