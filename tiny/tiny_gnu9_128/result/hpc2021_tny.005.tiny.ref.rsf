@@ -1,0 +1,277 @@
+spec.hpc2021.hw_avail: Nov-2099
+spec.hpc2021.interconnect_fs_hw_model: BI 100 Series
+spec.hpc2021.interconnect_fs_hw_switch_fs_count: 1
+spec.hpc2021.interconnect_fs_hw_switch_fs_data_rate: 100 Gb/s
+spec.hpc2021.interconnect_fs_hw_switch_fs_firmware: 10.3.0.0.60
+spec.hpc2021.interconnect_fs_hw_switch_fs_model000: BI 100 Series 48 Port 2
+spec.hpc2021.interconnect_fs_hw_switch_fs_model001: PSU
+spec.hpc2021.interconnect_fs_hw_switch_fs_ports: 48
+spec.hpc2021.interconnect_fs_hw_topo: Mesh
+spec.hpc2021.interconnect_fs_hw_vendor: Big Interconnect Company
+spec.hpc2021.interconnect_fs_order: 0
+spec.hpc2021.interconnect_fs_purpose: MPI Traffic
+spec.hpc2021.interconnect_fs_syslbl: Big Interconnect Company
+spec.hpc2021.license_num: ?
+spec.hpc2021.node_compute_count: 8
+spec.hpc2021.node_compute_hw_accel_connect: PCIe 3.0 16x
+spec.hpc2021.node_compute_hw_accel_count: 4
+spec.hpc2021.node_compute_hw_accel_desc: See Notes
+spec.hpc2021.node_compute_hw_accel_ecc: Yes
+spec.hpc2021.node_compute_hw_accel_model: Tesla V100-PCIE-16GB
+spec.hpc2021.node_compute_hw_accel_type: GPU
+spec.hpc2021.node_compute_hw_accel_vendor: NVIDIA Corporation
+spec.hpc2021.node_compute_hw_adapter_fs_count: 0
+spec.hpc2021.node_compute_hw_adapter_fs_data_rate: None
+spec.hpc2021.node_compute_hw_adapter_fs_driver: None
+spec.hpc2021.node_compute_hw_adapter_fs_firmware: None
+spec.hpc2021.node_compute_hw_adapter_fs_interconnect: None
+spec.hpc2021.node_compute_hw_adapter_fs_model: None
+spec.hpc2021.node_compute_hw_adapter_fs_ports_used: 0
+spec.hpc2021.node_compute_hw_adapter_fs_slot_type: None
+spec.hpc2021.node_compute_hw_cpu_char: Turbo up to 3.4 GHz
+spec.hpc2021.node_compute_hw_cpu_mhz: 2250
+spec.hpc2021.node_compute_hw_cpu_name: Turbo CPU
+spec.hpc2021.node_compute_hw_disk: 1 x 480 GB  SATA 2.5" SSD
+spec.hpc2021.node_compute_hw_memory: 256 GB (8 x 32 GB 2Rx8 PC4-3200AA-R)
+spec.hpc2021.node_compute_hw_model: Turblaster 5000
+spec.hpc2021.node_compute_hw_nchips: 1
+spec.hpc2021.node_compute_hw_ncores: 64
+spec.hpc2021.node_compute_hw_ncoresperchip: 64
+spec.hpc2021.node_compute_hw_ncpuorder: 1 chips
+spec.hpc2021.node_compute_hw_nthreadspercore: 1
+spec.hpc2021.node_compute_hw_ocache: None
+spec.hpc2021.node_compute_hw_other: None
+spec.hpc2021.node_compute_hw_pcache: 32 KB I + 32 KB D on chip per core
+spec.hpc2021.node_compute_hw_scache: 512 KB I+D on chip per core
+spec.hpc2021.node_compute_hw_tcache000: 256 MB I+D on chip per chip
+spec.hpc2021.node_compute_hw_tcache001: 16 MB shared / 4 cores
+spec.hpc2021.node_compute_hw_vendor: Mega Technology
+spec.hpc2021.node_compute_order: 1
+spec.hpc2021.node_compute_purpose: compute
+spec.hpc2021.node_compute_sw_accel_driver: --
+spec.hpc2021.node_compute_sw_localfile: xfs
+spec.hpc2021.node_compute_sw_os000: Amazon Linux 2
+spec.hpc2021.node_compute_sw_os001: Linux 5.10.112-108.499.amzn2.aarch64
+spec.hpc2021.node_compute_sw_other: None
+spec.hpc2021.node_compute_sw_sharedfile: None
+spec.hpc2021.node_compute_sw_state: Multi-user, run level 3
+spec.hpc2021.node_compute_syslbl: TurboBlaster 5000
+spec.hpc2021.node_fileserver_count: 1
+spec.hpc2021.node_fileserver_hw_accel_connect: --
+spec.hpc2021.node_fileserver_hw_accel_count: --
+spec.hpc2021.node_fileserver_hw_accel_desc: --
+spec.hpc2021.node_fileserver_hw_accel_ecc: --
+spec.hpc2021.node_fileserver_hw_accel_model: --
+spec.hpc2021.node_fileserver_hw_accel_type: --
+spec.hpc2021.node_fileserver_hw_accel_vendor: --
+spec.hpc2021.node_fileserver_hw_adapter_fs_count: 1
+spec.hpc2021.node_fileserver_hw_adapter_fs_data_rate: 100 Gb/s
+spec.hpc2021.node_fileserver_hw_adapter_fs_driver: 10.9.1.0.15
+spec.hpc2021.node_fileserver_hw_adapter_fs_firmware: 10.9.0.1.0
+spec.hpc2021.node_fileserver_hw_adapter_fs_interconnect: BG 5000 series
+spec.hpc2021.node_fileserver_hw_adapter_fs_model: --
+spec.hpc2021.node_fileserver_hw_adapter_fs_ports_used: 1
+spec.hpc2021.node_fileserver_hw_adapter_fs_slot_type: PCI-Express 3.0 x16
+spec.hpc2021.node_fileserver_hw_cpu_char: None
+spec.hpc2021.node_fileserver_hw_cpu_mhz: 2700
+spec.hpc2021.node_fileserver_hw_cpu_name: Intel Xeon Platinum 8280
+spec.hpc2021.node_fileserver_hw_disk: 1 x 1 TB 12 Gbps SAS 2.5" SSD (JBOD)
+spec.hpc2021.node_fileserver_hw_memory: 768 GB (24 x 32 GB 2Rx4 PC4-2933Y-R)
+spec.hpc2021.node_fileserver_hw_model: BG650
+spec.hpc2021.node_fileserver_hw_nchips: 2
+spec.hpc2021.node_fileserver_hw_ncores: 56
+spec.hpc2021.node_fileserver_hw_ncoresperchip: 28
+spec.hpc2021.node_fileserver_hw_ncpuorder: 1-2 chips
+spec.hpc2021.node_fileserver_hw_nthreadspercore: 1
+spec.hpc2021.node_fileserver_hw_ocache: None
+spec.hpc2021.node_fileserver_hw_other: None
+spec.hpc2021.node_fileserver_hw_pcache: 32 KB I + 32 KB D on chip per core
+spec.hpc2021.node_fileserver_hw_scache: 1 MB I+D on chip per core
+spec.hpc2021.node_fileserver_hw_tcache: 39424 KB I+D on chip per chip
+spec.hpc2021.node_fileserver_hw_vendor: Big Storage Company
+spec.hpc2021.node_fileserver_order: 2
+spec.hpc2021.node_fileserver_purpose: Fileserver
+spec.hpc2021.node_fileserver_sw_accel_driver: --
+spec.hpc2021.node_fileserver_sw_localfile: None
+spec.hpc2021.node_fileserver_sw_os: Red Hat Enterprise Linux Server release 7.6
+spec.hpc2021.node_fileserver_sw_other: None
+spec.hpc2021.node_fileserver_sw_sharedfile: NFS
+spec.hpc2021.node_fileserver_sw_state: Multi-User, run level 3
+spec.hpc2021.node_fileserver_syslbl: NFS
+spec.hpc2021.prepared_by: --
+spec.hpc2021.sw_avail: Nov-2099
+spec.hpc2021.sw_compiler: C/C++/Fortran: GCC Version 7.3.1
+spec.hpc2021.sw_mpi_library: OpenMPI Version 4.1.1
+spec.hpc2021.sw_mpi_other: --
+spec.hpc2021.sw_other: --
+spec.hpc2021.system_class: Homogenous Cluster
+spec.hpc2021.system_name: Big Compute
+spec.hpc2021.system_vendor: Mega Technology
+spec.hpc2021.test_date: Aug-2022
+spec.hpc2021.test_sponsor: University of Bristol
+spec.hpc2021.tester: University of Bristol
+# =============== do not edit below this point ===================
+spec.hpc2021.rawhash: 00d3e323f6c1ef050f62f627acb0900c156c2e25b452674f422bc2521280ae75
+spec.hpc2021.base_pmodel: MPI
+spec.hpc2021.base_ranks: 128
+spec.hpc2021.base_threads: 1
+spec.hpc2021.baseenergymean: --
+spec.hpc2021.basemean: --
+spec.hpc2021.basepeak: 0
+spec.hpc2021.cfidx000: &8AAAC1NCWmgxMUFZJlNZF+cAfAADGJuAAAR/8AAAv2/fsFADdaEHeFSANT0mk9kqNIAZGTQGNPJt
+spec.hpc2021.cfidx001: CgAAAAlPSRTaSGgABoaCKTVNk9UjT9RG0IaBoIkmkmEnpqaIA0AYdCZwrxcMkDCxAmgRoqBSCCIm
+spec.hpc2021.cfidx002: IMcGQRI1FRqdpkpKtqTbbbbbbbaSSSYo1UzKnWp6fXjJM1hpAa1vrfq4cOO18ihShQFBQCSCSZxn
+spec.hpc2021.cfidx003: jvd3aVvIAIbabpvWRZIJw29N03e1gaJIBJu71em0MBSklKSxhJUkleWAG22Lq7u8Ym6SiUkhgcB1
+spec.hpc2021.cfidx004: 68h4fvzt/VHPvGTArOTG/LV96FcKr7nGniHmMxDG+c8YDcXvtvxmZ8mJZymbBR64TLKegFfw3VFG
+spec.hpc2021.cfidx005: M5buYKakIS6AJWPxFBdqBIMkIjiqiqqoqqqqriRVVVRVYVCQkh+7BoslakvvYUbJibXQWF3zrAYN
+spec.hpc2021.cfidx006: 4ZyiqrCsXdhjTkvThxXOq7KBqq0dCTw5VyasHnLDRRvc1w0OnSbTaZPTit1xgdi0NzkwClSK0FAw
+spec.hpc2021.cfidx007: 7IFq4dVBMpVkMpDJ6OeuK27yrxKy5M49CiGmXlRLiARAMRDJturZgyvK6G50mLqb5o3uFSsKwAOC
+spec.hpc2021.cfidx008: hYbIBsadkAoyVgnCIFAXIQ0CAgkU7QCnkVg4HgJhAMn9B5DD3PYeTk9X/T3KpkXDgUO5xxCza5o7
+spec.hpc2021.cfidx009: lLEbApTZSU2V3K6goTbA0LdzBxNQUOS81F058swG+iIuN3BLZosFjuUfR2Dsd6t8Oh0rqBb2UTxc
+spec.hpc2021.cfidx010: NZJJJUqBIgPrloQwNknuQoPBs+HDogEzGvHUrHugFmNy3zqWgFmx6tGbODFQsr2MEghDrRJIj53O
+spec.hpc2021.cfidx011: WjR3HCcKJbyrqLsahRr5Y5HFjSYIompSbGiAdKmxAIRJAYyESBEfLQ4emks/4u5IpwoSAvzgD4A=
+spec.hpc2021.errors000: 'reportable' flag not set during run
+spec.hpc2021.errors001: 505.lbm_t (base) did not have enough runs!
+spec.hpc2021.errors002: 528.pot3d_t (base) did not have enough runs!
+spec.hpc2021.errors003: 534.hpgmgfv_t (base) did not have enough runs!
+spec.hpc2021.errors004: 513.soma_t (base) did not have enough runs!
+spec.hpc2021.errors005: 532.sph_exa_t (base) did not have enough runs!
+spec.hpc2021.errors006: 519.clvleaf_t (base) did not have enough runs!
+spec.hpc2021.errors007: 521.miniswp_t (base) did not have enough runs!
+spec.hpc2021.errors008: 535.weather_t (base) did not have enough runs!
+spec.hpc2021.hw_total_chips: 8
+spec.hpc2021.hw_total_cores: 512
+spec.hpc2021.hw_total_memory: 2 TB
+spec.hpc2021.hw_total_nodes: 8
+spec.hpc2021.hw_total_threads: 512
+spec.hpc2021.invalid: 1
+spec.hpc2021.label: aws_mpi
+spec.hpc2021.lognum: 005
+spec.hpc2021.max_peak_ranks: --
+spec.hpc2021.max_peak_threads: --
+spec.hpc2021.max_ranks: 128
+spec.hpc2021.max_threads: 1
+spec.hpc2021.mean_anyway: 0
+spec.hpc2021.metric: hpc2021_tny
+spec.hpc2021.min_peak_ranks: --
+spec.hpc2021.min_peak_threads: --
+spec.hpc2021.name: tiny
+spec.hpc2021.peak_pmodel: Not Run
+spec.hpc2021.peakenergymean: --
+spec.hpc2021.peakmean: Not Run
+spec.hpc2021.rawconfig000: @eNq1WW1P20oW/u5fcQSt2ormxSHQgBStSAjc7F4gIlC1u6qiiTNOXPx2PTaQVv3v+5yxnTiJA9wu
+spec.hpc2021.rawconfig001: m0olmXnOmTPn3ce71PfvA0vETuCTFXie8CfkOr48Nnap5iYqjmRtOOh1Z6FVGzt+bSYiXypVixIf
+spec.hpc2021.rawconfig002: S1SpRHKcOO4E36zAt51pWzyo0XR/NPWTo6plTxki/DvVNhstfA+SOEzikR1EnojbwnWXa1EQxO3a
+spec.hpc2021.rawconfig003: LPBkTQmvBh4qlNYokipxY1WLHX+u/9OsRyk7J5aRFl61G3RgtqqxFK4U9iiG/AW+lCg5oQehaOfv
+spec.hpc2021.rawconfig004: nLBj7L7ix3jr2P5E2vT2pyvG0v1F+WeX+mek18hR5ENeJbXMBG0ab4EAGaySYfSi9CeObRR4esFk
+spec.hpc2021.rawconfig005: g6deW+fphU6RZ4rRixnPWErojto0l8rwxJ20XTFV7cp3MusGFHsjFfQO10nNCPUbrmNJX8mRn3j6
+spec.hpc2021.rawconfig006: 9Db9A2xUDA3DOEGUrt36zr2MlBPPKbCpEzkqDlyNk9FC8K243zQGBB7e3tBQWlrS32Xi+JabTOQx
+spec.hpc2021.rawconfig007: a7+KH2ALB8SHOnLq+KT3FccRRH6Xgd69rgP9tgJ6j8ILXUlpjCZpzEDkhQEJ30gAqeYwhkcJnCoi
+spec.hpc2021.rawconfig008: tgy9h/Y+/M/qo3PpI1ZdbQs+2EhPGt3D6YIot/yFnAr4lzXzAzeYznOQLzy5dI+OM6Vu4CG4pTF7
+spec.hpc2021.rawconfig009: GIl74bhU9J/L4L7SqB8dGerJXUiVsklV4CMQUtF26T+X+DE6lcqKnJB3j+kPEU0eRCS/GQwcWakA
+spec.hpc2021.rawconfig010: I0jojl2wvUmicdBxhXbmg3q9vooLItZom8zVZStIfA611upymERhgFhtU7ayuo1bZ3rbVNk6MI3v
+spec.hpc2021.rawconfig011: VL6t0gFnhUmq5+wq1B3cboB8oBY3IWvmhKoEw8ubV9VbAbIttg6bW/ZCGTH5Fkg8i6SYaBDApUfw
+spec.hpc2021.rawconfig012: NSyUqcU1kpDigParTTr/40cp3Jv9ALrRONhUSmgJa8YH7TfoXx3q01727ZS4YrKkEIZYmg1aldMe
+spec.hpc2021.rawconfig013: mCnx3guIYk0E+0Cgg0O6KCHDl61kJutEkynoADWvRk190KaZgly8y8DflMOTXhDNKZXivEPvW/TI
+spec.hpc2021.rawconfig014: V8fXxvVjiwbdZmW/Ua+fnFSuP2xQTxx1pz3kkZqtOhPR8OTmhBrVgx0aDk83hYln2qe0LMZuSfid
+spec.hpc2021.rawconfig015: WJZ0udoH0bcNcsGbS0+XyhX02azXK4Nuv1cxD887W0jy8Gtu2U+jDHJ97p/2T5AuEJZp9txCEM9D
+spec.hpc2021.rawconfig016: yUnmvCR48iN9H8kUGAgn4Zh1WOxxC1haVpq0vpZYMIVMoCUNGUoJ/SFnlytwGNhxSf5iPhMRIi2M
+spec.hpc2021.rawconfig017: bLVQYalPFHC53upPgZQbxKlCnmc4EbEYQbMvwcIEsRrplu4ZCRw/5lSRK/xZISLuO14AtJ3IY12W
+spec.hpc2021.rawconfig018: QlF0AoUIZpPcDnv0p+Mnj9RjUUK0MjJbGMqIDzMbpdQcyM2q2aiazcpRs9o0K2jXBPrUDbSLQHZt
+spec.hpc2021.rawconfig019: x2VhHm21sZ8mggxQKq2KU71fgL1TgV6jj4QGn1x5D2fY35RvLVjPwFvp22S+ZS8WNtnflrNfI1mR
+spec.hpc2021.rawconfig020: +WxYhlmRomyf68w1fOQPEW/VfoScIrD4qXpYxqOo29JzlnV6qYQNUF4wG5tH5M1D2R2LRZ5bniFS
+spec.hpc2021.rawconfig021: n5hK3bMIf16Gjxfl6qjZaJYWnUX1WKVcFCuztOYsStUq1d8uj6vkT5qwvEStArY2BGuwYtdSaRT7
+spec.hpc2021.rawconfig022: lnXgag/SaG1HcWE/LN/O+p9G2W6eYTvnh3m/sQbIK++nw5auvDBkofQ2deltHO3vf11U3lUGheJr
+spec.hpc2021.rawconfig023: 0k0HGYbOxxBoeDJcFGB6/8/O1WkpeaEP7CNqXPoiYcuBi6rHT3etRqu+jSxrpD7VtyKyzmybPbcU
+spec.hpc2021.rawconfig024: DxTKSu8xhNKVrpeP5uEz1CslwnwGvFYlOue6QcbzcuRI9QxtoRKY9epRtV41q/VnaBZlRlOYTHPw
+spec.hpc2021.rawconfig025: HEmhPKKvgUFrz0mWl+jN2y93kLz7hct/M4qq0FbIExQnoCJ0kYXWKfI4q2/sLHPlxaBPN5Gwbcfa
+spec.hpc2021.rawconfig026: QK1nvRcdWoyrvlbQMDVeCVA9OLE1WzQ7utVeIULLSgP4D+L3JeRcqQfD26exS5U/CdNuy5W/VYaL
+spec.hpc2021.rawconfig027: gzDQD3xq9jSbUm95kmLVjRFj+HdYN4xXm1ygAk94MsKP/yqfJVDfpnjmqGwuQbrSPkiIgSe2sSQR
+spec.hpc2021.rawconfig028: hq6DEMYvhWYhGx+ojyQnDvT0ECTuBFyA9KWcABj47pxOOlefeynfMMCtq8arXULPe/gmq9Oe9Ulp
+spec.hpc2021.rawconfig029: ep3aYgiEMFt232gruJfCVbOpWLfW3durncH0kUCfft7t0meefoH5J5jCZArgR64zjgQqgya6CqXP
+spec.hpc2021.rawconfig030: YZQj0SsCuZtBVwrr7kbLtq1dPfHED/BKO6TtfWm6f1CFp5hmo2LWW9Xm0VFVeD/8RlUIFE88u/Od
+spec.hpc2021.rawconfig031: k7HnxDx7lOqbsav/jpReHKUH8g3QHkYxHtKz8fPxBvAAQCLFLWM+ouZJrk7u7BlMrzl9D8aq+v/2
+spec.hpc2021.rawconfig032: 2dfh/XoueYMGaYYeCObNZGSRYe5iUFUJ3beKOaCkiHTI2NwvIZfClaFB30LeA91OzsMT0R1ca4fe
+spec.hpc2021.rawconfig033: KzxWjqUbPHww+Dz5yHlsFjzoM8aOL3TOnAcJTfWIL+ZJu+O6HJbORPqxYyOGQRknPucXnrk79px2
+spec.hpc2021.rawconfig034: xmi8dwiJfgdC3aXfhOvuGOmUezmwy+flo3zIbWhWBQSzMlbeLWAxhqgGvCT3JGzwwD9rCbLhnw7D
+spec.hpc2021.rawconfig035: oYzR3EyVkT1jHRuIwSJ/4CzL6H75sr74+GicbUDto/oK+zxGz3iMDtajz73rYf/qcnQ1uMEfpqpU
+spec.hpc2021.rawconfig036: 7lMQH7K+X9w+e5oax3IkBPqZXxHHCkw0weVI+vdOFPgeLPKRJhL5g41DSQjJLnTxHEvGIc7A5WTy
+spec.hpc2021.rawconfig037: nR0G8QVlWjO2b5QNh/ND3ncHtx/4rUKqu7dO4S2E/Ive4fbvDOgE2OtbLe5Qy+qJsDKeUxhGx4fN
+spec.hpc2021.rawconfig038: Y04yizcPmvFemtue5Q/1Psf/7c8w9H/pM44Hvfab7HFhcV6RdE/TWoJ0mYVHoTkxUtdJzcoJqOKH
+spec.hpc2021.rawconfig039: 9Ea/0KI3PwvUv+hNlpteM/9cwYye8yOdN+E3T3cQdvBurjTa6/llHUyG3g7Psn8lTpQB+NUafF8H
+spec.hpc2021.rawconfig040: taApGk6dPbVDghO/B+L4Vdzo69c7yAPLFd3EVfVEideyukbX0MA1nwUO/MLA4xwykbFwXF7Sn1kc
+spec.hpc2021.rawconfig041: h8e12sPDQ5UjvRpE0xpoG/WGWTsNLP3qUMtbncWeq1MKO/JF/9+9NIBSaXTpt8TY1b0A3yaXnk86
+spec.hpc2021.rawconfig042: K5CUU7DYWUkt3rv7IsLuCsmXLwuiJ0j29gpE/M4JutNBsyj28I4EHQwrrvjmJUj1njHmtxXMN9Pw
+spec.hpc2021.rawconfig043: CoeVpFIQJK2DrCMdHYs01mYHaS9yWlHN+vqVK1sgxiunvcuTzp+90eD66qz/Z//y3OgOrq5vTjr4
+spec.hpc2021.rawconfig044: cfM1hbqecbaxaPtBBcXDuquIKBJzVZ4ZalrU7fkhzFt3kL4kE2zjl+eDBb+riwH/XtybI9wOwNIL
+spec.hpc2021.rawconfig045: C+dcBsT1J1MoDvlIirPenUzXS0IF3YeuOLmeGbfUM2/pFfM1cwE/kYix4zrx/NW4Gv8F1S0jJw==
+spec.hpc2021.runhpcver: 
+spec.hpc2021.runmode: speed
+spec.hpc2021.size: ref
+spec.hpc2021.submit: 1
+spec.hpc2021.suitehash: 38556cd40779bdafc2eed2d930c5213c0a8b3ee14b052d4acd2060f084d0e7beac29497baf09c1d99c6c552947f70d28820c4b4ca48cc26fed26bf4a048ed800
+spec.hpc2021.suitever: 1.0.3
+spec.hpc2021.sysinfo_program: 
+spec.hpc2021.sysinfo_program_hash: 0
+spec.hpc2021.table: 1
+spec.hpc2021.time: 1660648159.12806
+spec.hpc2021.toolset: linux-aarch64
+spec.hpc2021.toolshash: 2af23ec0adffaab2015776bd525d559ccd6a0bba64747f2e46177918ff511dba9293394dc392f2148ebb6da2bd15ebd166dbc6bccae4491bd9f3d9650f3803e4
+spec.hpc2021.toolvers000: @eNptkMsOwiAQRX/FDyCkvhZ2a+K6G9dmJLQlDgwZqP6+ENNIS5fnMHO5mWt3vyEMoQMOmqW37V42
+spec.hpc2021.toolvers001: 8rgTT+3UaIFfaxd0nNXhrx6KrCUnPf5eRGIPrGeRthW53gyVWG0m36dCUzQYttzGOLGFWNREE2Jv
+spec.hpc2021.toolvers002: UJeKFMSyDNKwpDrXgsFtm4uUipyJxIWhsIA6xedzF8zwKWlyo1etSHedfPbnS3MSq18z1sHvFFzZ
+spec.hpc2021.toolvers003: L4h9lp0=
+spec.hpc2021.tunelist000: base
+spec.hpc2021.unitbase: SPEChpc
+spec.hpc2021.valid: X
+spec.hpc2021.results.518_tealeaf_t.base.000.basepeak: 0
+spec.hpc2021.results.518_tealeaf_t.base.000.benchmark: 518.tealeaf_t
+spec.hpc2021.results.518_tealeaf_t.base.000.copytime000: 1924.826652
+spec.hpc2021.results.518_tealeaf_t.base.000.dp: 6
+spec.hpc2021.results.518_tealeaf_t.base.000.exehash: 8d5036263c44e42f911982d2286bf13088de19b1de5eaa7c11426ff7e6929f97
+spec.hpc2021.results.518_tealeaf_t.base.000.iteration: 0
+spec.hpc2021.results.518_tealeaf_t.base.000.label: aws_mpi
+spec.hpc2021.results.518_tealeaf_t.base.000.pmodel: MPI
+spec.hpc2021.results.518_tealeaf_t.base.000.ranks: 128
+spec.hpc2021.results.518_tealeaf_t.base.000.ratio: 0.85722
+spec.hpc2021.results.518_tealeaf_t.base.000.rc: 0
+spec.hpc2021.results.518_tealeaf_t.base.000.reference: 1650
+spec.hpc2021.results.518_tealeaf_t.base.000.reference_power: 1000
+spec.hpc2021.results.518_tealeaf_t.base.000.reported_nsec: 826714000
+spec.hpc2021.results.518_tealeaf_t.base.000.reported_sec: 1924
+spec.hpc2021.results.518_tealeaf_t.base.000.reported_time: 1924.826714
+spec.hpc2021.results.518_tealeaf_t.base.000.runmode: speed
+spec.hpc2021.results.518_tealeaf_t.base.000.selected: 1
+spec.hpc2021.results.518_tealeaf_t.base.000.submit: 1
+spec.hpc2021.results.518_tealeaf_t.base.000.threads: 1
+spec.hpc2021.results.518_tealeaf_t.base.000.valid: S
+spec.hpc2021.results.518_tealeaf_t.base.001.basepeak: 0
+spec.hpc2021.results.518_tealeaf_t.base.001.benchmark: 518.tealeaf_t
+spec.hpc2021.results.518_tealeaf_t.base.001.copytime000: 1293.442357
+spec.hpc2021.results.518_tealeaf_t.base.001.dp: 6
+spec.hpc2021.results.518_tealeaf_t.base.001.exehash: 8d5036263c44e42f911982d2286bf13088de19b1de5eaa7c11426ff7e6929f97
+spec.hpc2021.results.518_tealeaf_t.base.001.iteration: 1
+spec.hpc2021.results.518_tealeaf_t.base.001.label: aws_mpi
+spec.hpc2021.results.518_tealeaf_t.base.001.pmodel: MPI
+spec.hpc2021.results.518_tealeaf_t.base.001.ranks: 128
+spec.hpc2021.results.518_tealeaf_t.base.001.ratio: 1.275666
+spec.hpc2021.results.518_tealeaf_t.base.001.rc: 0
+spec.hpc2021.results.518_tealeaf_t.base.001.reference: 1650
+spec.hpc2021.results.518_tealeaf_t.base.001.reference_power: 1000
+spec.hpc2021.results.518_tealeaf_t.base.001.reported_nsec: 442419000
+spec.hpc2021.results.518_tealeaf_t.base.001.reported_sec: 1293
+spec.hpc2021.results.518_tealeaf_t.base.001.reported_time: 1293.442419
+spec.hpc2021.results.518_tealeaf_t.base.001.runmode: speed
+spec.hpc2021.results.518_tealeaf_t.base.001.selected: 0
+spec.hpc2021.results.518_tealeaf_t.base.001.submit: 1
+spec.hpc2021.results.518_tealeaf_t.base.001.threads: 1
+spec.hpc2021.results.518_tealeaf_t.base.001.valid: S
+spec.hpc2021.compopts000.518_tealeaf_t.base: @eNqlULFugzAQ3f0VlncS2hGFSGCclJZglMDQLigFI7kBHNmkUv++FyAkGZqlJ0u+8z3fvfdi1VrN
+spec.hpc2021.compopts001.518_tealeaf_t.base: /iAqWQusjp1UrXGQ6bQsulyf2lLq/FtoWf245IkgSA1AIJ/Ztk0QonyTOJg0R1kU2IKjLlNmClvB
+spec.hpc2021.compopts002.518_tealeaf_t.base: LmEUrjhgfrbG2Aqfy3mp5XnMfKiK/CB0K2qDLV7tTQdoFnt+xPJky1dhFMbwbwyrbqZ8YdRJF2JJ
+spec.hpc2021.compopts003.518_tealeaf_t.base: EHUwpe5AYai4/8qT1CV3fAgCojTJVpG33kHvnlvf9VlMX3J6QTwgSxB3MOwIN+EHA+hf1MelfJt6
+spec.hpc2021.compopts004.518_tealeaf_t.base: Pjyk74CtG4Kg9zbZNmh7rH6UvlCfX6LozBLfxFUjxr0BUTDZ8T+a/Syena288fEXG9merw==
+spec.hpc2021.compvers000.518_tealeaf_t.base: @eNotjFFLwzAUhd/zK87jBAlTn+aeYmg1MJuSZIJPo2RpG4RkpJmyf++tCBcO9+N8B1KePhpjle5O
+spec.hpc2021.compvers001.518_tealeaf_t.base: uncUz2zyHht7GfwXXqW8w44/8S2T+XIrcZorNsQetw87tCUE2DzWn6EEtPmazkONOd1DJc+Zm+MC
+spec.hpc2021.compvers002.518_tealeaf_t.base: unGtLf+1PRb66rySa/EBYy7wtB3TRJnOcV1YOODmQKvkd5qRWYZUb3ukXBG+Q/rz3hsj30TnxIs6
+spec.hpc2021.compvers003.518_tealeaf_t.base: KPcJQq1yXWMtWm0g0AvjlDwehEF/NL22DWe/wUZNKw==
